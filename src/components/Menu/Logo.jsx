@@ -1,10 +1,12 @@
 import styled from "styled-components"
 
+import logoLolja from "../../assets/images/logololja.svg"
+
 export const Logo = () => {
-  return <LogoImg>LOGO</LogoImg>
+  return <LogoImg src={logoLolja} alt="Logo" />
 }
 
-const LogoImg = styled.div`
+const LogoImg = styled.img`
   width: 100px;
   height: 50px;
 
