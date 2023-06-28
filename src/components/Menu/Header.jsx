@@ -3,11 +3,11 @@ import { Search } from "./Search"
 import { Logo } from "./Logo"
 import { UserCart } from "./UserCart"
 import { ContentContainer } from "../common/ContentLimit"
-import { MenuBar } from "./Menubar"
+import { Menu } from "./Menu"
 
 export const Header = () => {
   return (
-    <Menu>
+    <ContainerHeader>
       <ContainerSearch>
         <Logo />
         <Search />
@@ -15,14 +15,14 @@ export const Header = () => {
       </ContainerSearch>
       <ContainerMenu>
         <ContentContainer>
-          <MenuBar />
+          <Menu />
         </ContentContainer>
       </ContainerMenu>
-    </Menu>
+    </ContainerHeader>
   )
 }
 
-const Menu = styled.header`
+const ContainerHeader = styled.header`
   display: flex;
   flex-direction: column;
 `
