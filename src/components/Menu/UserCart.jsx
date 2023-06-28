@@ -20,7 +20,7 @@ const ContainterUserCart = styled.div`
 const IconUser = styled(AiOutlineUser)`
   height: 1.5rem;
   width: 1.5rem;
-  padding-right: 1rem;
+  margin-right: 1rem;
 
   cursor: pointer;
 `

@@ -34,7 +34,6 @@ const ContainerSearch = styled(ContentContainer)`
 `
 
 const ContainerMenu = styled.div`
-  background-color: gray;
+  background-color: #f2f2f2;
   width: 100%;
-  height: 40px;
 `
