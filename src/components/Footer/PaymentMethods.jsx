@@ -27,7 +27,7 @@ const PaymentImage = styled.img`
   margin: 0.5rem 1rem 0 0;
 `
 
-export default function DevelopBy() {
+export const PaymentMethods = () => {
   return (
     <Background>
       <Container>

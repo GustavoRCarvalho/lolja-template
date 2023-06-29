@@ -1,9 +1,8 @@
 import styled from "styled-components"
+import { ContentContainer } from "../common/ContentLimit"
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled(ContentContainer)`
   min-height: 50px;
-  width: 80%;
-  max-width: 1024px;
   padding: 0.5em 0 0.5em 0;
 
   display: flex;
