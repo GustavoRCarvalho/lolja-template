@@ -5,27 +5,44 @@ export const MenuExtension = ({ menuBarExtension }) => {
     return list.map((label) => <MenuItem key={label}>{label}</MenuItem>)
   }
 
-  return <ListMenu>{menuListItems(menuBarExtension)}</ListMenu>
+  return (
+    <ListMenuContainer>
+      <ListMenu>{menuListItems(menuBarExtension)}</ListMenu>
+    </ListMenuContainer>
+  )
 }
+
+const ListMenuContainer = styled.div`
+  background-color: #f2f2f2;
+
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  width: 100%;
+  left: 0;
+
+  border-top: 1px solid rgb(252 97 51 / 54%);
+`
 
 const ListMenu = styled.ul`
   list-style-type: none;
 
   display: flex;
   flex-flow: column wrap;
-  align-items: flex-start;
-  position: absolute;
+  align-content: flex-start;
 
-  width: calc(100vw - 20%);
-  max-height: 300px;
+  max-width: 1280px;
+  width: 95%;
 
   margin: 0;
+  max-height: 350px;
+
+  padding-inline-start: 10rem;
   padding-block: 1rem;
 
   row-gap: 0.5rem;
-  column-gap: 10rem;
-
-  border-top: 1px solid rgb(252 97 51 / 54%);
+  column-gap: 15rem;
 `
 
 const MenuItem = styled.li`
