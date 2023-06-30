@@ -35,7 +35,7 @@ const ContainerSearch = styled(ContentContainer)`
 `
 
 const ContainerMenu = styled.div`
-  background-color: #f2f2f2;
+  background-color: ${(props) => props.theme.mediumGray};
   width: 100%;
 
   display: flex;
