@@ -1,9 +1,14 @@
 import styled from "styled-components"
 
 import logoLolja from "../../assets/images/logololja.svg"
+import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 
 export const Logo = () => {
-  return <LogoImg src={logoLolja} alt="Logo" />
+  return (
+    <NoStyleLinkRouter to={"/"}>
+      <LogoImg src={logoLolja} alt="Logo" />
+    </NoStyleLinkRouter>
+  )
 }
 
 const LogoImg = styled.img`

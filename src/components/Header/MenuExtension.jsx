@@ -1,8 +1,17 @@
 import styled from "styled-components"
+import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
+import { textRegexRouter } from "../common/textRegexRouter"
 
 export const MenuExtension = ({ menuBarExtension }) => {
   function menuListItems(list) {
-    return list.map((label) => <MenuItem key={label}>{label}</MenuItem>)
+    return list.map((item) => {
+      const label = textRegexRouter(item)
+      return (
+        <NoStyleLinkRouter to={`/${label}`} key={item}>
+          <MenuItem>{item}</MenuItem>
+        </NoStyleLinkRouter>
+      )
+    })
   }
 
   return (
@@ -13,7 +22,7 @@ export const MenuExtension = ({ menuBarExtension }) => {
 }
 
 const ListMenuContainer = styled.div`
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 
   display: flex;
   justify-content: center;
@@ -46,7 +55,6 @@ const ListMenu = styled.ul`
 `
 
 const MenuItem = styled.li`
-  font-family: "Dosis";
   color: #4f4f4f;
   font-size: 13px;
   letter-spacing: 0.03em;

@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
+import { textRegexRouter } from "../common/textRegexRouter"
 
 const menuOptions = {
   COLEÇÕES: [
@@ -70,14 +72,18 @@ export const MenuBar = ({ setMenuBarExtension }) => {
   const listKeys = Object.keys(menuOptions)
 
   function menuListItems(list) {
-    return listKeys.map((label) => (
-      <MenuItem
-        onMouseEnter={() => setMenuBarExtension(menuOptions[label])}
-        key={label}
-      >
-        {label}
-      </MenuItem>
-    ))
+    return list.map((item) => {
+      const label = textRegexRouter(item)
+      return (
+        <NoStyleLinkRouter to={`/${label}`} key={item}>
+          <MenuItem
+            onMouseEnter={() => setMenuBarExtension(menuOptions[item] ?? [])}
+          >
+            {item}
+          </MenuItem>
+        </NoStyleLinkRouter>
+      )
+    })
   }
 
   return <ListMenu>{menuListItems(listKeys)}</ListMenu>
@@ -98,7 +104,6 @@ const MenuItem = styled.li`
   align-items: center;
   height: 50px;
 
-  font-family: "Dosis";
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
