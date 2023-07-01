@@ -20,7 +20,6 @@ export const BannnerCarousel = () => {
       transitionTime={1000}
     >
       {CarouselImages().map((src, index) => {
-        console.log(src)
         return <Image alt={"Banner"} key={index} src={src} />
       })}
     </CarouselContainer>

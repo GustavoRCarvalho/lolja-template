@@ -23,9 +23,14 @@ export const Header = () => {
 }
 
 const ContainerHeader = styled.header`
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 99;
 `
 
 const ContainerSearch = styled(ContentContainer)`
@@ -40,5 +45,4 @@ const ContainerMenu = styled.div`
 
   display: flex;
   justify-content: center;
-  z-index: 99;
 `
