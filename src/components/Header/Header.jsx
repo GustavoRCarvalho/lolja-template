@@ -40,4 +40,5 @@ const ContainerMenu = styled.div`
 
   display: flex;
   justify-content: center;
+  z-index: 99;
 `
