@@ -61,13 +61,14 @@ const MenuItem = styled.li`
   line-height: 2.5;
 
   cursor: pointer;
+  text-decoration-line: none;
   border-bottom: 1px solid transparent;
 
   :hover {
     color: #fc6133;
     transition: color 250ms;
 
-    border-bottom: 1px solid;
-    transition: border 250ms;
+    text-decoration-line: underline;
+    transition: text-decoration-line 250ms;
   }
 `
