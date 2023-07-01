@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { ContentContainer } from "../common/ContentLimit"
 import { BannnerCarousel } from "./BannerCarousel"
-import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner1.webp"
-import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner2.webp"
-import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner3.webp"
+import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner1.png"
+import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner2.png"
+import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner3.png"
 import { InfoHomeLine } from "./InfoHomeLine"
 
 export const Home = () => {
