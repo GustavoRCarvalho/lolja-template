@@ -1,10 +1,15 @@
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import styled from "styled-components"
+import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner1.png"
+import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner2.png"
+import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner3.png"
 
-export const BannnerCarousel = ({ title, imagesList = [] }) => {
-  console.log(imagesList)
-
+export const BannnerCarousel = () => {
+  const CarouselImages = () => {
+    const List = [Banner1, Banner2, Banner3]
+    return List
+  }
   return (
     <CarouselContainer
       autoPlay
@@ -14,9 +19,9 @@ export const BannnerCarousel = ({ title, imagesList = [] }) => {
       interval={4000}
       transitionTime={1000}
     >
-      {imagesList.map((src, index) => {
+      {CarouselImages().map((src, index) => {
         console.log(src)
-        return <Image alt={title} key={index} src={src} />
+        return <Image alt={"Banner"} key={index} src={src} />
       })}
     </CarouselContainer>
   )
