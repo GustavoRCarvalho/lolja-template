@@ -107,6 +107,7 @@ const MenuItem = styled.li`
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.15em;
+  color: black;
 
   cursor: pointer;
   border-bottom: 1px solid transparent;
