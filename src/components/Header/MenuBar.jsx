@@ -97,6 +97,7 @@ const ListMenu = styled.ul`
   margin: 0;
   padding: 0;
   gap: 2rem;
+  overflow: hidden;
 `
 
 const MenuItem = styled.li`
