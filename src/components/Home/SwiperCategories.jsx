@@ -1,22 +1,32 @@
 import styled from "styled-components"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { ContentContainer } from "../common/ContentLimit"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import { Scrollbar } from "swiper"
+import { ContentContainer } from "../common/ContentLimit"
 
-export const SwiperCategories = ({ categories = [] }) => {
-  function creatorsList(list) {
-    console.log(list)
-    return list.map((category, index) => (
-      <SwiperSlideComponent key={category + index}>
-        <CreatorImage>{category}</CreatorImage>
+export const SwiperCategories = ({
+  categories = [],
+  category,
+  setCategory,
+}) => {
+  function categoriesList(obj) {
+    const categories = Object.keys(obj)
+
+    return categories.map((categoryLabel, index) => (
+      <SwiperSlideComponent key={categoryLabel + index}>
+        <CategoryButton
+          active={categoryLabel === category}
+          onClick={() => setCategory(categoryLabel)}
+        >
+          {categoryLabel}
+        </CategoryButton>
       </SwiperSlideComponent>
     ))
   }
 
   return (
-    <SwiperContainer>
+    <CategoriesContainer>
       <SwiperComponent
         spaceBetween={"10px"}
         slidesPerView={"auto"}
@@ -25,13 +35,13 @@ export const SwiperCategories = ({ categories = [] }) => {
         }}
         modules={[Scrollbar]}
       >
-        {creatorsList(categories)}
+        {categoriesList(categories)}
       </SwiperComponent>
-    </SwiperContainer>
+    </CategoriesContainer>
   )
 }
 
-const CreatorImage = styled.button`
+const CategoryButton = styled.button`
   background-color: ${(props) => props.theme.mediumGray};
   border-radius: 0.2rem;
   font-size: 0.7;
@@ -43,11 +53,8 @@ const CreatorImage = styled.button`
   padding: 0.2rem 0.8rem;
   border: none;
   cursor: pointer;
-`
 
-const SwiperContainer = styled(ContentContainer)`
-  display: flex;
-  justify-content: center;
+  border: ${(props) => props.active && "2px solid black"};
 `
 
 const SwiperComponent = styled(Swiper)`
@@ -56,4 +63,10 @@ const SwiperComponent = styled(Swiper)`
 
 const SwiperSlideComponent = styled(SwiperSlide)`
   width: auto !important;
+`
+
+const CategoriesContainer = styled(ContentContainer)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
