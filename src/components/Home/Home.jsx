@@ -2,21 +2,21 @@ import styled from "styled-components"
 import { ContentContainer } from "../common/ContentLimit"
 import { BannnerCarousel } from "./BannerCarousel"
 import { InfoHomeLine } from "./InfoHomeLine"
-import { SwiperCreators } from "./SwiperCreators"
+import { Creators } from "./Creators"
 
 export const Home = () => {
   return (
     <HomeContainer>
       <BannnerCarousel />
       <InfoHomeLine />
-      <SwiperCreators />
+      <Creators />
       <ContentContainer>HOME</ContentContainer>
     </HomeContainer>
   )
 }
 
 const HomeContainer = styled.main`
-  background-color: #66c80d;
+  background-color: #ffffff;
 
   display: flex;
   flex-direction: column;

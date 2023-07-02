@@ -2,6 +2,11 @@ body {
   margin: 0;
   font-family: "Dosis";
   font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+button {
+  font-family: "Dosis";
 }
 
 @font-face {
