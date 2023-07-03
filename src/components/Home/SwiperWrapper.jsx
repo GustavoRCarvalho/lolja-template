@@ -1,25 +1,21 @@
-import { SwiperCreators } from "./SwiperCreators"
 import styled from "styled-components"
 import { SwiperCategories } from "./SwiperCategories"
 import { useState } from "react"
 import { ContentContainer } from "../common/ContentLimit"
-import { ListCategories } from "../../assets/images/FakeAPIImages/Creators"
 
-export const Creators = () => {
-  const firtsCategory = Object.keys(ListCategories)[0]
+export const SwiperWrapper = ({ list, title, Swiper }) => {
+  const firtsCategory = Object.keys(list)[0]
   const [category, setCategory] = useState(firtsCategory)
 
   return (
     <CreatorsContainer>
-      <CreatorsTitle>
-        Encontre os produtos de seus creators favoritos
-      </CreatorsTitle>
+      <CreatorsTitle>{title}</CreatorsTitle>
       <SwiperCategories
-        categories={ListCategories}
+        categories={list}
         category={category}
         setCategory={setCategory}
       />
-      <SwiperCreators creators={ListCategories[category]} />
+      <Swiper content={list[category]} />
     </CreatorsContainer>
   )
 }

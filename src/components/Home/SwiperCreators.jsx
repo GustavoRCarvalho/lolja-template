@@ -3,7 +3,7 @@ import { SwiperSlide } from "swiper/react"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 import { SwiperNavigation } from "./SwiperNavigation"
 
-export const SwiperCreators = ({ creators = [] }) => {
+export const SwiperCreators = ({ content = [] }) => {
   function creatorsList(list) {
     return list.map(({ creator, name }, index) => (
       <SwiperSlideComponent key={name + index}>
@@ -14,7 +14,7 @@ export const SwiperCreators = ({ creators = [] }) => {
     ))
   }
 
-  return <SwiperNavigation>{creatorsList(creators)}</SwiperNavigation>
+  return <SwiperNavigation>{creatorsList(content)}</SwiperNavigation>
 }
 
 const SwiperSlideComponent = styled(SwiperSlide)`

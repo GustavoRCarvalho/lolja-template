@@ -1,0 +1,81 @@
+import moletombranco1 from "./moletombranco1.png"
+import moletombranco2 from "./moletombranco1.png"
+
+export const ListProducts = {
+  "old skull": [
+    {
+      images: [moletombranco1, moletombranco2],
+      title: "calango",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+  ],
+  guaxinim: [
+    {
+      images: [moletombranco1, moletombranco2],
+      title: "calango",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+    {
+      creator: [moletombranco1, moletombranco2],
+      title: "gabi",
+      price: "239,00",
+      salePrice: "199,00",
+      salePorcent: parseInt(100 - 239.9 / (199 * 100)),
+      installmentsPrice: ["33,32", "6"],
+      tamanhos: ["P", "M", "G", "2G"],
+    },
+  ],
+}
