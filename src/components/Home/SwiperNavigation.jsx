@@ -7,7 +7,7 @@ import "./Swiper.css"
 import { useRef } from "react"
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa"
 
-export const SwiperNavigation = ({ children }) => {
+export const SwiperNavigation = ({ children, slidesPerView = "auto" }) => {
   const navigationPrevRef = useRef(null)
   const navigationNextRef = useRef(null)
 
@@ -21,7 +21,7 @@ export const SwiperNavigation = ({ children }) => {
           swiper.navigation.update()
         }}
         spaceBetween={"10px"}
-        slidesPerView={"auto"}
+        slidesPerView={slidesPerView}
         pagination={{
           clickable: true,
         }}
@@ -29,7 +29,7 @@ export const SwiperNavigation = ({ children }) => {
       >
         {children}
       </SwiperComponent>
-      <SwiperButton ref={navigationPrevRef}>
+      <SwiperButton left={0} ref={navigationPrevRef}>
         <LeftIcon />
       </SwiperButton>
       <SwiperButton right={0} ref={navigationNextRef}>
@@ -41,6 +41,10 @@ export const SwiperNavigation = ({ children }) => {
 
 const SwiperWrapper = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
 `
 
 const SwiperComponent = styled(Swiper)`
@@ -54,6 +58,7 @@ const SwiperButton = styled.button`
   position: absolute;
   top: 37%;
   right: ${(props) => props.right ?? "auto"};
+  left: ${(props) => props.left ?? "auto"};
   cursor: pointer;
   padding: 0;
 `

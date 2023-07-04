@@ -3,4 +3,5 @@ import styled from "styled-components"
 
 export const NoStyleLinkRouter = styled(Link)`
   text-decoration: none;
+  color: black;
 `

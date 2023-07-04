@@ -19,5 +19,5 @@ export const SwiperProducts = ({ content = [] }) => {
 }
 
 const SwiperSlideComponent = styled(SwiperSlide)`
-  max-width: 140px;
+  max-width: 300px;
 `

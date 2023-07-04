@@ -8,23 +8,23 @@ export const SwiperWrapper = ({ list, title, Swiper }) => {
   const [category, setCategory] = useState(firtsCategory)
 
   return (
-    <CreatorsContainer>
-      <CreatorsTitle>{title}</CreatorsTitle>
+    <WrapperContainer>
+      <WrapperTitle>{title}</WrapperTitle>
       <SwiperCategories
         categories={list}
         category={category}
         setCategory={setCategory}
       />
       <Swiper content={list[category]} />
-    </CreatorsContainer>
+    </WrapperContainer>
   )
 }
 
-const CreatorsTitle = styled.h1`
+const WrapperTitle = styled.h1`
   text-align: center;
 `
 
-const CreatorsContainer = styled(ContentContainer)`
+const WrapperContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
