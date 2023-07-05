@@ -58,6 +58,10 @@ const CategoryButton = styled.button`
 `
 
 const SwiperComponent = styled(Swiper)`
+  .swiper-wrapper {
+    align-items: center;
+  }
+
   padding-bottom: 1rem;
 `
 

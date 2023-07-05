@@ -3,7 +3,6 @@ import { Swiper } from "swiper/react"
 import { Navigation, Pagination } from "swiper"
 import "swiper/css/pagination"
 import "swiper/css/navigation"
-import "./Swiper.css"
 import { useRef } from "react"
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa"
 
@@ -50,6 +49,23 @@ const SwiperWrapper = styled.div`
 const SwiperComponent = styled(Swiper)`
   margin-inline: 40px;
   padding-bottom: 2rem;
+
+  .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .swiper-pagination-bullet {
+    background: #fc6133;
+    opacity: 1;
+    width: 4px;
+    height: 4px;
+  }
+  .swiper-pagination-bullet-active {
+    background: #fc6133;
+    width: 10px;
+    height: 10px;
+  }
 `
 
 const SwiperButton = styled.button`
