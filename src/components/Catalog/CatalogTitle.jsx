@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const CatalogTitle = ({ pathLabel }) => {
   return (
     <>
-      <Title role="heading">{pathLabel}</Title>
+      <Title role="heading">{pathLabel.replace("busca=", "Busca por: ")}</Title>
       <Paragraph>
         Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura
         da primavera cheia de cor, com a energia do misticismo mais dark.

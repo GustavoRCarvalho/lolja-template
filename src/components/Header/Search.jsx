@@ -1,13 +1,15 @@
 import styled from "styled-components"
 import { AiOutlineSearch } from "react-icons/ai"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-export const Search = () => {
+export const Search = (props) => {
   const [search, setSearch] = useState("")
+  const navigate = useNavigate()
 
   function handleSearch(event) {
     event.preventDefault()
-    console.log("Search: ", search)
+    navigate(`/busca=${search}`)
   }
 
   return (

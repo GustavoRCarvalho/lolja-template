@@ -1,7 +1,11 @@
 import styled from "styled-components"
 
 export const Location = ({ pathLabel = "" }) => {
-  return <LocationText>HOME / {pathLabel.toUpperCase()}</LocationText>
+  return (
+    <LocationText>
+      HOME / {pathLabel.replace("busca=", "").toUpperCase()}
+    </LocationText>
+  )
 }
 
 const LocationText = styled.span`

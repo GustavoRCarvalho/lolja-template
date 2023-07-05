@@ -8,7 +8,6 @@ export default function Content(props) {
     <main>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/busca=:search" element={<Home />} />
         <Route path=":catalog" element={<Catalog />} />
         <Route path="/produto/:product" element={<Product />} />
         {/* <Route path="about" element={<About />} />
