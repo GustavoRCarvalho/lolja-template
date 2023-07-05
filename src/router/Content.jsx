@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import { Catalog } from "../components/Catalog/Catalog"
 import { Home } from "../components/Home/Home"
+import { Product } from "../components/Product/Product"
 
 export default function Content(props) {
   return (
@@ -9,6 +10,7 @@ export default function Content(props) {
         <Route path="/" element={<Home />}></Route>
         <Route path="/busca=:search" element={<Home />} />
         <Route path=":catalog" element={<Catalog />} />
+        <Route path="/produto/:product" element={<Product />} />
         {/* <Route path="about" element={<About />} />
         <Route path="roupas">
           <Route path="id=:id" element={<Product />} />

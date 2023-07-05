@@ -1,24 +1,23 @@
 import styled from "styled-components"
-import { CatalogTitle } from "./CatalogTitle"
 import { Location } from "../common/Location"
 import { ContentContainer } from "../common/ContentLimit"
 import { useLocation } from "react-router-dom"
 
-export const Catalog = (props) => {
+export const Product = () => {
   const { pathname } = useLocation()
   const pathLabel = pathname.replace("/", "").replace("-", " ")
 
   return (
-    <CatalogBackground>
-      <CatalogContainer>
+    <ProductBackground>
+      <ProductContainer>
         <Location pathLabel={pathLabel} />
-        <CatalogTitle pathLabel={pathLabel} />
-      </CatalogContainer>
-    </CatalogBackground>
+        Produto
+      </ProductContainer>
+    </ProductBackground>
   )
 }
 
-const CatalogBackground = styled.div`
+const ProductBackground = styled.div`
   background-color: ${(props) => props.theme.mediumGray};
 
   width: 100%;
@@ -27,7 +26,7 @@ const CatalogBackground = styled.div`
   justify-content: center;
 `
 
-const CatalogContainer = styled(ContentContainer)`
+const ProductContainer = styled(ContentContainer)`
   background-color: ${(props) => props.theme.mediumGray};
 
   display: flex;

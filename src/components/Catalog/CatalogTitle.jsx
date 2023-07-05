@@ -1,14 +1,9 @@
-import { useLocation } from "react-router-dom"
 import styled from "styled-components"
 
-export const CatalogTitle = (props) => {
-  const { pathname } = useLocation()
-
+export const CatalogTitle = ({ pathLabel }) => {
   return (
     <>
-      <Title role="heading">
-        {pathname.replace("/", "").replace("-", " ")}
-      </Title>
+      <Title role="heading">{pathLabel}</Title>
       <Paragraph>
         Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura
         da primavera cheia de cor, com a energia do misticismo mais dark.
