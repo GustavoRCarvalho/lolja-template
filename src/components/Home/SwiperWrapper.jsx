@@ -28,4 +28,5 @@ const WrapperContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 2rem;
 `
