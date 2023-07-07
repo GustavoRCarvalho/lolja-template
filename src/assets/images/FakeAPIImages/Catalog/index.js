@@ -23,3 +23,28 @@ export const ListProducts = {
   webtvbrasileira: createList(3),
   keira: createList(8),
 }
+
+export const ListCatalog = ({ name = "", quantity = 20 }) => {
+  if (
+    name === "calango" ||
+    name === "gabi" ||
+    name === "luba" ||
+    name === "castro" ||
+    name === "nostalgia" ||
+    name === "felps" ||
+    name === "orichinho" ||
+    name === "matt" ||
+    name === "inutilismo"
+  ) {
+    return {
+      about: "",
+      products: createList(quantity),
+    }
+  } else {
+    return {
+      about:
+        "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark.",
+      products: createList(quantity),
+    }
+  }
+}

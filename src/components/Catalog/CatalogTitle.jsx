@@ -1,13 +1,10 @@
 import styled from "styled-components"
 
-export const CatalogTitle = ({ pathLabel }) => {
+export const CatalogTitle = ({ pathLabel, about }) => {
   return (
     <>
       <Title role="heading">{pathLabel.replace("busca=", "Busca por: ")}</Title>
-      <Paragraph>
-        Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura
-        da primavera cheia de cor, com a energia do misticismo mais dark.
-      </Paragraph>
+      {about && <Paragraph>{about}</Paragraph>}
     </>
   )
 }
@@ -17,6 +14,8 @@ const Title = styled.h1`
 
   font-size: 2em;
   line-height: 1.2;
+  text-transform: uppercase;
+
   margin-bottom: 1rem;
 `
 
