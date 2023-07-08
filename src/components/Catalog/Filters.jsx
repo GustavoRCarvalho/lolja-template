@@ -3,10 +3,12 @@ import { FilterCard } from "./FilterCard"
 import { useState } from "react"
 
 export const Filters = ({ filters = {} }) => {
-  const priceFilter = filters["preço"]
-  const [selectedFilters, setSelectedFilters] = useState({
-    preço: [...priceFilter],
-  })
+  const selectedFiltersInitialState = {
+    preço: [...filters["preço"]],
+  }
+  const [selectedFilters, setSelectedFilters] = useState(
+    selectedFiltersInitialState
+  )
   const categories = Object.keys(filters)
 
   return (

@@ -41,7 +41,7 @@ const Card = styled.div`
 
   text-align: center;
 
-  border-radius: 15px;
+  border-radius: 10px;
   overflow: hidden;
 `
 
