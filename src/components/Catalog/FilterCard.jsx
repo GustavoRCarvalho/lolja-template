@@ -2,6 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { AiFillCaretDown } from "react-icons/ai"
 import { AiFillCaretUp } from "react-icons/ai"
+import { FilterButtons } from "./FilterButtons"
 
 export const FilterCard = ({
   category,
@@ -18,19 +19,12 @@ export const FilterCard = ({
       </CategoryDropdown>
       {showCard && (
         <FiltersWrapper>
-          {filters.map((label) => (
-            <FiltroButton
-              key={label}
-              active={selectedFilters[label]}
-              onClick={() =>
-                setSelectedFilters((value) => {
-                  return { ...value, [label]: !value[label] }
-                })
-              }
-            >
-              {label}
-            </FiltroButton>
-          ))}
+          <FilterButtons
+            category={category}
+            list={filters}
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
         </FiltersWrapper>
       )}
     </FiltrosContainer>
@@ -67,22 +61,6 @@ const FiltersWrapper = styled.div`
   gap: 0.5em;
 
   margin-block: 1em;
-`
-
-const FiltroButton = styled.button`
-  background-color: #e0e0e0;
-  border-radius: 0.2em;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  text-align: center;
-  text-transform: uppercase;
-  width: max-content;
-  height: min-content;
-  padding: 0.4em 0.6em;
-  border: none;
-  cursor: pointer;
-
-  border: ${(props) => props.active && "2px solid black"};
 `
 
 const DownArrow = styled(AiFillCaretDown)`

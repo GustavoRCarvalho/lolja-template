@@ -61,7 +61,7 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
         ],
         tamanho: ["2G", "G", "M", "P", "PP", "3G", "4G", "PPP", "5 - 7 ANOS"],
         sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
-        preço: ["39,90", "159,90"],
+        preço: [39.9, 159.9],
         ordernar: [
           "MAIS RECENTES",
           "MAIS ANTIGOS",

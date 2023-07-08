@@ -29,7 +29,7 @@ export const Catalog = (props) => {
         </TitleContainer>
       </ColorBackground>
       <CatalogContainer>
-        <Filters filters={catalog.filters} />
+        {catalog.filters && <Filters filters={catalog.filters} />}
         <CatalogProducts listProducts={catalog.products} />
       </CatalogContainer>
     </CatalogBackground>
