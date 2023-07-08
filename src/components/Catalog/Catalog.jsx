@@ -8,6 +8,7 @@ import BannerHalfImage from "../../assets/images/FakeAPIImages/Banner/BannerHalf
 import { useEffect, useState } from "react"
 import { ListCatalog } from "../../assets/images/FakeAPIImages/Catalog"
 import { Filters } from "./Filters"
+import { CatalogProducts } from "./CatalogProducts"
 
 export const Catalog = (props) => {
   const { pathname } = useLocation()
@@ -15,7 +16,7 @@ export const Catalog = (props) => {
   const [catalog, setCatalog] = useState({})
 
   useEffect(() => {
-    setCatalog(ListCatalog({ name: pathLabel, quantity: 20 }))
+    setCatalog(ListCatalog({ name: pathLabel, quantity: 18 }))
   }, [pathLabel])
 
   return (
@@ -28,7 +29,8 @@ export const Catalog = (props) => {
         </TitleContainer>
       </ColorBackground>
       <CatalogContainer>
-        <Filters />
+        <Filters filters={catalog.filters} />
+        <CatalogProducts listProducts={catalog.products} />
       </CatalogContainer>
     </CatalogBackground>
   )
@@ -64,9 +66,7 @@ const CatalogContainer = styled(ContentContainer)`
   background-color: #fff;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
   padding-bottom: 2rem;
-  padding-top: 1.5rem;
 `

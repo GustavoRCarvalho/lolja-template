@@ -1,19 +1,29 @@
 import styled from "styled-components"
+import { FilterCard } from "./FilterCard"
+import { useState } from "react"
 
-export const Filters = () => {
+export const Filters = ({ filters = {} }) => {
+  const [selectedFilters, setSelectedFilters] = useState({})
+  const categories = Object.keys(filters)
+
   return (
-    <FiltersContainer>
-      <FiltersWrapper></FiltersWrapper>
-    </FiltersContainer>
+    <div>
+      <FiltrosTitle>Filtros</FiltrosTitle>
+      {categories.map((category) => (
+        <FilterCard
+          key={category}
+          category={category}
+          filters={filters[category]}
+          selectedFilters={selectedFilters}
+          setSelectedFilters={setSelectedFilters}
+        />
+      ))}
+    </div>
   )
 }
 
-const FiltersWrapper = styled.div`
-  background-color: ${(props) => props.theme.mediumGray};
+const FiltrosTitle = styled.h2`
+  width: 100%;
 
-  margin-right: 3rem;
-  width: 26rem;
-  height: 100vh;
+  font-size: 2em;
 `
-
-const FiltersContainer = styled.div``

@@ -1,26 +1,32 @@
 import styled from "styled-components"
 import { ProductImage } from "./ProductImage"
+import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
+import { textRegexRouter } from "../common/textRegexRouter"
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, title }) => {
+  const label = textRegexRouter(product.title)
+
   return (
-    <Card>
-      <ProductImage images={product.images} />
-      <ProductTitle>{product.title}</ProductTitle>
-      <PriceContainer>
-        <ProductContent>
-          <PriceOriginal>DE:</PriceOriginal>
-          <PriceOriginal textDecoration={"line-through"}>
-            R$ {product.price}
-          </PriceOriginal>
-          <PriceSale>POR:</PriceSale>
-          <PriceSale>R$ {product.salePrice}</PriceSale>
-          <PriceInstallment>
-            {product.installmentsPrice[0]}x de R$ {product.installmentsPrice[1]}{" "}
-            sem juros
-          </PriceInstallment>
-        </ProductContent>
-      </PriceContainer>
-    </Card>
+    <NoStyleLinkRouter to={`/produto/${label}`}>
+      <Card>
+        <ProductImage images={product.images} />
+        <ProductTitle>{product.title}</ProductTitle>
+        <PriceContainer>
+          <ProductContent>
+            <PriceOriginal>DE:</PriceOriginal>
+            <PriceOriginal textDecoration={"line-through"}>
+              R$ {product.price}
+            </PriceOriginal>
+            <PriceSale>POR:</PriceSale>
+            <PriceSale>R$ {product.salePrice}</PriceSale>
+            <PriceInstallment>
+              {product.installmentsPrice[0]}x de R${" "}
+              {product.installmentsPrice[1]} sem juros
+            </PriceInstallment>
+          </ProductContent>
+        </PriceContainer>
+      </Card>
+    </NoStyleLinkRouter>
   )
 }
 
