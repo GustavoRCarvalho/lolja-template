@@ -48,7 +48,6 @@ const FiltrosContainer = styled.div`
 
   width: 15em;
   border-radius: 0.4em;
-  margin-right: 3em;
   padding: 0.7em;
 
   margin-block: 1em;

@@ -17,7 +17,11 @@ export const CatalogProducts = ({ listProducts = [] }) => {
 
 const ProductsContainer = styled.div`
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 6rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `

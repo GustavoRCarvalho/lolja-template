@@ -32,7 +32,8 @@ export const ProductCard = ({ product, title }) => {
 
 const Card = styled.div`
   position: relative;
-  height: 450px;
+  height: 60vh;
+  max-height: 500px;
   width: 100%;
 
   display: flex;
@@ -43,6 +44,10 @@ const Card = styled.div`
 
   border-radius: 10px;
   overflow: hidden;
+
+  @media screen and (max-width: 1024px) {
+    max-height: 400px;
+  }
 `
 
 const ProductTitle = styled.h2`
