@@ -1,21 +1,43 @@
 import styled from "styled-components"
 import { ProductCard } from "./ProductCard"
+import { Pagination } from "./Pagination"
 
-export const CatalogProducts = ({ listProducts = [] }) => {
+export const CatalogProducts = ({
+  listProducts = [],
+  totalPages = 0,
+  actualPage,
+  setActualPage,
+}) => {
   return (
     <ProductsContainer>
-      {listProducts.map((product, index) => (
-        <ProductCard
-          key={product.title + index}
-          product={product}
-          title={product.title}
+      <ProductsWrapper>
+        {listProducts.map((product, index) => (
+          <ProductCard
+            key={product.title + index}
+            product={product}
+            title={product.title}
+          />
+        ))}
+      </ProductsWrapper>
+      {!!totalPages && (
+        <Pagination
+          totalPages={totalPages}
+          actualPage={actualPage}
+          setActualPage={setActualPage}
         />
-      ))}
+      )}
     </ProductsContainer>
   )
 }
 
 const ProductsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+`
+
+const ProductsWrapper = styled.div`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);

@@ -4,10 +4,10 @@ import moletombranco2 from "./moletombranco2.png"
 const obj = {
   images: [moletombranco1, moletombranco2],
   title: "MOLETOM OVERSIZED OFF WHITE - ppLove",
-  price: "239,00",
-  salePrice: "199,00",
-  salePorcent: parseInt(100 - 239.9 / (199 * 100)),
-  installmentsPrice: ["6", "33,32"],
+  price: 239,
+  salePrice: 199,
+  salePorcent: `-${parseInt(100 - (199 * 100) / 239.9)}%`,
+  installmentsPrice: ["6", 33.32],
   tamanhos: ["P", "M", "G", "2G"],
 }
 
@@ -39,6 +39,7 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
     return {
       about: "",
       products: createList(quantity),
+      totalPages: 5,
       filters: {
         categoria: [
           "camisetas",
@@ -75,6 +76,7 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
       about:
         "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark.",
       products: createList(quantity),
+      totalPages: 5,
       filters: {
         categoria: [
           "camisetas",

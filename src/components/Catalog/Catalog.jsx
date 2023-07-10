@@ -9,15 +9,36 @@ import { useEffect, useState } from "react"
 import { ListCatalog } from "../../assets/images/FakeAPIImages/Catalog"
 import { Filters } from "./Filters"
 import { CatalogProducts } from "./CatalogProducts"
+import { ColorRing } from "react-loader-spinner"
 
 export const Catalog = (props) => {
   const { pathname } = useLocation()
   const pathLabel = pathname.replace("/", "").replace("-", " ")
+  const [actualPage, setActualPage] = useState(1)
+  const [loading, setLoading] = useState(false)
   const [catalog, setCatalog] = useState({})
+  const [filters, setFilters] = useState({})
 
   useEffect(() => {
-    setCatalog(ListCatalog({ name: pathLabel, quantity: 18 }))
-  }, [pathLabel])
+    console.log("useEffect")
+    setLoading(true)
+    const responseCatalog = ListCatalog({
+      name: pathLabel,
+      quantity: 18,
+      actualPage: actualPage,
+      filters: filters,
+    })
+    setTimeout(() => {
+      setCatalog(responseCatalog)
+      setLoading(false)
+    }, 1500)
+  }, [pathLabel, actualPage, filters])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [actualPage])
+
+  console.log("render catalog")
 
   return (
     <CatalogBackground>
@@ -29,8 +50,24 @@ export const Catalog = (props) => {
         </TitleContainer>
       </ColorBackground>
       <CatalogContainer>
-        {catalog.filters && <Filters filters={catalog.filters} />}
-        <CatalogProducts listProducts={catalog.products} />
+        <Loading>
+          <ColorRing
+            visible={loading}
+            height="60"
+            width="60"
+            ariaLabel="blocks-loading"
+            colors={["#ff0516", "#ffe600", "#00ff22", "#00a2ff", "#b700ff"]}
+          />
+        </Loading>
+        {catalog.filters && (
+          <Filters filters={catalog.filters} setFilters={setFilters} />
+        )}
+        <CatalogProducts
+          listProducts={catalog.products}
+          totalPages={catalog.totalPages}
+          actualPage={actualPage}
+          setActualPage={setActualPage}
+        />
       </CatalogContainer>
     </CatalogBackground>
   )
@@ -42,6 +79,10 @@ const CatalogBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`
+
+const Loading = styled.div`
+  position: absolute;
 `
 
 const ColorBackground = styled.div`

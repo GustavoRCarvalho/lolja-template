@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { ProductImage } from "./ProductImage"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 import { textRegexRouter } from "../common/textRegexRouter"
+import { moneyFormat } from "../common/MoneyFormat"
 
 export const ProductCard = ({ product, title }) => {
   const label = textRegexRouter(product.title)
@@ -15,16 +16,17 @@ export const ProductCard = ({ product, title }) => {
           <ProductContent>
             <PriceOriginal>DE:</PriceOriginal>
             <PriceOriginal textDecoration={"line-through"}>
-              R$ {product.price}
+              {moneyFormat(product.price)}
             </PriceOriginal>
             <PriceSale>POR:</PriceSale>
-            <PriceSale>R$ {product.salePrice}</PriceSale>
+            <PriceSale>{moneyFormat(product.salePrice)}</PriceSale>
             <PriceInstallment>
-              {product.installmentsPrice[0]}x de R${" "}
-              {product.installmentsPrice[1]} sem juros
+              {product.installmentsPrice[0]}x de{" "}
+              {moneyFormat(product.installmentsPrice[1])} sem juros
             </PriceInstallment>
           </ProductContent>
         </PriceContainer>
+        <SalePorcent>{product.salePorcent}</SalePorcent>
       </Card>
     </NoStyleLinkRouter>
   )
@@ -48,6 +50,19 @@ const Card = styled.div`
   @media screen and (max-width: 1024px) {
     max-height: 400px;
   }
+`
+
+const SalePorcent = styled.div`
+  position: absolute;
+
+  background-color: #00b081;
+  color: #fff;
+  font-size: 0.8em;
+
+  padding: 0.4rem;
+  margin: 0.4rem;
+  border-radius: 0.5em;
+  left: 0;
 `
 
 const ProductTitle = styled.h2`

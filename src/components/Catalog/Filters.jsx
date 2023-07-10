@@ -1,14 +1,19 @@
 import styled from "styled-components"
 import { FilterCard } from "./FilterCard"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-export const Filters = ({ filters = {} }) => {
+export const Filters = ({ filters = {}, setFilters }) => {
   const selectedFiltersInitialState = {
     preço: [...filters["preço"]],
   }
   const [selectedFilters, setSelectedFilters] = useState(
     selectedFiltersInitialState
   )
+
+  useEffect(() => {
+    setFilters(selectedFilters)
+  }, [selectedFilters, setFilters])
+
   const categories = Object.keys(filters)
 
   return (
