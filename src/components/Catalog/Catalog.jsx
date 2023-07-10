@@ -13,14 +13,13 @@ import { ColorRing } from "react-loader-spinner"
 
 export const Catalog = (props) => {
   const { pathname } = useLocation()
-  const pathLabel = pathname.replace("/", "").replace("-", " ")
+  const pathLabel = pathname.replace("/", "").replace(/-/g, " ")
   const [actualPage, setActualPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const [catalog, setCatalog] = useState({})
   const [filters, setFilters] = useState({})
 
   useEffect(() => {
-    console.log("useEffect")
     setLoading(true)
     const responseCatalog = ListCatalog({
       name: pathLabel,
@@ -37,8 +36,6 @@ export const Catalog = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [actualPage])
-
-  console.log("render catalog")
 
   return (
     <CatalogBackground>
