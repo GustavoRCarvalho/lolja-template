@@ -12,11 +12,7 @@ export const CatalogProducts = ({
     <ProductsContainer>
       <ProductsWrapper>
         {listProducts.map((product, index) => (
-          <ProductCard
-            key={product.title + index}
-            product={product}
-            title={product.title}
-          />
+          <ProductCard key={product.title + index} product={product} />
         ))}
       </ProductsWrapper>
       {!!totalPages && (

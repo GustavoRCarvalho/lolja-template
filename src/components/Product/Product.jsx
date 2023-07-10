@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom"
 
 export const Product = () => {
   const { pathname } = useLocation()
-  const pathLabel = pathname.replace("/", "").replace("-", " ")
+  const pathLabel = pathname.replace("/", "").replace(/-/g, " ").split("/")[0]
 
   return (
     <ProductBackground>

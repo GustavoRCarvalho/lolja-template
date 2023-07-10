@@ -3,7 +3,7 @@ import moletombranco2 from "./moletombranco2.png"
 
 const obj = {
   images: [moletombranco1, moletombranco2],
-  title: "MOLETOM OVERSIZED OFF WHITE - ppLove",
+  title: "MOLETOM OVERSIZED OFF WHITE",
   price: 239,
   salePrice: 199,
   salePorcent: `-${parseInt(100 - (199 * 100) / 239.9)}%`,

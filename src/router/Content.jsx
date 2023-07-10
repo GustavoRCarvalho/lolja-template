@@ -9,7 +9,7 @@ export default function Content(props) {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path=":catalog" element={<Catalog />} />
-        <Route path="/produto/:product" element={<Product />} />
+        <Route path=":catalog/:product" element={<Product />} />
         {/* <Route path="about" element={<About />} />
         <Route path="roupas">
           <Route path="id=:id" element={<Product />} />

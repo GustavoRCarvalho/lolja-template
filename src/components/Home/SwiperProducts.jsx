@@ -8,7 +8,7 @@ export const SwiperProducts = ({ content = [] }) => {
     return list.map((product, index) => {
       return (
         <SwiperSlideComponent key={product.title + index}>
-          <ProductCard product={product} title={product.title} />
+          <ProductCard product={product} />
         </SwiperSlideComponent>
       )
     })

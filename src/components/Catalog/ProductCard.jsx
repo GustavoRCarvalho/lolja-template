@@ -3,12 +3,16 @@ import { ProductImage } from "./ProductImage"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 import { textRegexRouter } from "../common/textRegexRouter"
 import { moneyFormat } from "../common/MoneyFormat"
+import { useLocation } from "react-router"
 
-export const ProductCard = ({ product, title }) => {
+export const ProductCard = ({ product }) => {
+  const { pathname } = useLocation()
   const label = textRegexRouter(product.title)
 
   return (
-    <NoStyleLinkRouter to={`/produto/${label}`}>
+    <NoStyleLinkRouter
+      to={`${textRegexRouter(pathname !== "/" ? pathname : "HOME")}/${label}`}
+    >
       <Card>
         <ProductImage images={product.images} />
         <ProductTitle>{product.title}</ProductTitle>

@@ -1,9 +1,10 @@
 import styled from "styled-components"
 
 export const Location = ({ pathLabel = "" }) => {
+  const label = pathLabel !== "HOME" ? pathLabel : ""
   return (
     <LocationText>
-      HOME / {pathLabel.replace("busca=", "").toUpperCase()}
+      HOME / {label.replace("busca=", "").toUpperCase()}
     </LocationText>
   )
 }
