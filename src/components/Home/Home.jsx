@@ -45,7 +45,7 @@ export const Home = () => {
   )
 }
 
-const HomeContainer = styled.main`
+const HomeContainer = styled.div`
   background-color: #ffffff;
 
   display: flex;
