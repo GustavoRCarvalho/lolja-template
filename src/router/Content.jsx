@@ -2,10 +2,11 @@ import { Route, Routes } from "react-router-dom"
 import { Catalog } from "../components/Catalog/Catalog"
 import { Home } from "../components/Home/Home"
 import { Product } from "../components/Product/Product"
+import styled from "styled-components"
 
 export default function Content(props) {
   return (
-    <main>
+    <MainContainer>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path=":catalog" element={<Catalog />} />
@@ -16,6 +17,14 @@ export default function Content(props) {
         </Route> */}
         <Route path="*" element={<div>Error NOT Found</div>} />
       </Routes>
-    </main>
+    </MainContainer>
   )
 }
+
+const MainContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
