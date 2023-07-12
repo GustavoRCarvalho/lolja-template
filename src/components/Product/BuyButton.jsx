@@ -25,7 +25,7 @@ export const BuyButton = ({ buttonActive, setProductOptions }) => {
           -
         </QuantityButton>
         <QuantityInput readOnly value={quantity} />
-        <QuantityButton onClick={() => clickQuatityButton(5)}>+</QuantityButton>
+        <QuantityButton onClick={() => clickQuatityButton(1)}>+</QuantityButton>
       </QuantityWrapper>
       <AddCardButton active={buttonActive} type="submit">
         {buttonActive ? (
@@ -57,7 +57,7 @@ const AddCardButton = styled.button`
 
   flex: 1;
 
-  cursor: pointer;
+  cursor: ${(props) => (props.active ? "pointer" : "normal")};
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.9em;
