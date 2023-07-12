@@ -34,6 +34,10 @@ export const Catalog = (props) => {
   }, [pathLabel, actualPage, filters])
 
   useEffect(() => {
+    setCatalog({})
+  }, [pathLabel])
+
+  useEffect(() => {
     window.scrollTo(0, 0)
   }, [actualPage])
 

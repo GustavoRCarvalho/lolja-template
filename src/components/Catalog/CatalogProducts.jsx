@@ -29,8 +29,9 @@ export const CatalogProducts = ({
 const ProductsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
   align-items: center;
+
+  width: 100%;
 `
 
 const ProductsWrapper = styled.div`
@@ -38,6 +39,7 @@ const ProductsWrapper = styled.div`
   gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 6rem;
+  width: 100%;
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
