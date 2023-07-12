@@ -94,7 +94,6 @@ const TitleContainer = styled(ContentContainer)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 
   padding-bottom: 2rem;
   padding-top: 1.5rem;
