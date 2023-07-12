@@ -1,8 +1,7 @@
 import styled from "styled-components"
 import { SwiperSlide } from "swiper/react"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
-import { SwiperNavigation } from "./SwiperNavigation"
-
+import { SwiperNavigation } from "../common/SwiperNavigation"
 export const SwiperCreators = ({ content = [] }) => {
   function creatorsList(list) {
     return list.map(({ creator, name }, index) => (

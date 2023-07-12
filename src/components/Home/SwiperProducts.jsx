@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { SwiperSlide } from "swiper/react"
-import { SwiperNavigation } from "./SwiperNavigation"
 import { ProductCard } from "../Catalog/ProductCard"
+import { SwiperNavigation } from "../common/SwiperNavigation"
 
 export const SwiperProducts = ({ content = [] }) => {
   function productsList(list) {
