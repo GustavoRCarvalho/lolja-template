@@ -1,16 +1,27 @@
 import styled from "styled-components"
 
-export const Options = ({ options }) => {
+export const Options = ({ options, productOptions, setProductOptions }) => {
   const optionsKeys = Object.keys(options)
   return (
     <OptionsContainer>
       {optionsKeys.map((option) => {
         return (
-          <OptionsWrapper>
+          <OptionsWrapper key={option}>
             <OptionsTitle>{option}</OptionsTitle>
             <div>
               {options[option].map((label) => (
-                <OptionButton>{label}</OptionButton>
+                <OptionButton
+                  type="button"
+                  key={label}
+                  active={productOptions?.[option] === label}
+                  onClick={() =>
+                    setProductOptions((value) => {
+                      return { ...value, [option]: label }
+                    })
+                  }
+                >
+                  {label}
+                </OptionButton>
               ))}
             </div>
           </OptionsWrapper>
@@ -23,7 +34,7 @@ const OptionsContainer = styled.div`
   border: 1px solid #ccc;
   border-radius: 2px;
 
-  max-width: max-content;
+  max-width: 100%;
 
   display: flex;
   flex-direction: column;
@@ -50,16 +61,19 @@ const OptionsTitle = styled.span`
 
 const OptionButton = styled.button`
   background-color: #e0e0e0;
-  border-radius: 0.2rem;
+  width: max-content;
+
   font-size: 0.7em;
   font-weight: 700;
   letter-spacing: 0.23em;
-  text-align: center;
   text-transform: uppercase;
-  width: max-content;
-  padding: 0.1rem 0.4rem;
-  border: none;
+  text-align: center;
+
   cursor: pointer;
+
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.1rem 0.4rem;
   margin-inline: 0.5em;
   margin-block: 0.3em;
 

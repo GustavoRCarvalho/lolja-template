@@ -9,6 +9,7 @@ export const product = {
   salePorcent: `-${parseInt(100 - (199 * 100) / 239.9)}%`,
   installmentsPrice: ["6", 33.32],
   options: {
+    cores: ["preto", "cinza", "branco"],
     tamanho: ["5 - 7 ANOS", "PP", "P", "M", "G", "2G", "3G", "4G"],
     sexo: ["FEMININO", "MASCULINO"],
   },

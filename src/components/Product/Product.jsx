@@ -4,34 +4,25 @@ import { ContentContainer } from "../common/ContentLimit"
 import { useLocation } from "react-router-dom"
 import { product } from "../../assets/images/FakeAPIImages/Product"
 import CarouselProduct from "./CarouselProduct"
-import { Options } from "./Options"
 import { Price } from "./Price"
+import { BuyForm } from "./BuyForm"
 
 export const Product = () => {
   const { pathname } = useLocation()
   const pathLabel = pathname.replace("/", "").replace(/-/g, " ").split("/")[0]
 
   return (
-    <ProductBackground>
-      <ProductContainer>
-        <CarouselProduct title={product.title} imagesList={product.images} />
-        <InfoWrapper>
-          <Location pathLabel={pathLabel} />
-          <TitleProduct>{product.title}</TitleProduct>
-          <Price product={product} />
-          <Options options={product.options} />
-        </InfoWrapper>
-      </ProductContainer>
-    </ProductBackground>
+    <ProductContainer>
+      <CarouselProduct title={product.title} imagesList={product.images} />
+      <InfoWrapper>
+        <Location pathLabel={pathLabel} />
+        <TitleProduct>{product.title}</TitleProduct>
+        <Price product={product} />
+        <BuyForm product={product} />
+      </InfoWrapper>
+    </ProductContainer>
   )
 }
-
-const ProductBackground = styled.div`
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-`
 
 const ProductContainer = styled(ContentContainer)`
   display: flex;
@@ -50,10 +41,12 @@ const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
+  max-width: 30em;
 
   margin-left: 3rem;
   @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
     width: 100%;
+    max-width: 40em;
     margin-left: 0;
   }
 `

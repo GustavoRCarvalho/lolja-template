@@ -21,6 +21,24 @@ export const Price = ({ product }) => {
   )
 }
 
+const PriceContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-block: 2em;
+`
+
+const PriceWrapper = styled.p`
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas:
+    "original-prefix original-price"
+    "sale-prefix sale-price"
+    "installments installments";
+  grid-template-columns: min-content 2fr;
+  align-items: center;
+  margin: 0;
+`
+
 const PriceSaleLabel = styled.span`
   font-size: 1.2em;
   color: #000;
@@ -54,11 +72,6 @@ const PriceInstallment = styled.span`
   width: 100%;
 `
 
-const PriceContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
 const SalePorcent = styled.div`
   background-color: #00b081;
   color: #fff;
@@ -67,15 +80,4 @@ const SalePorcent = styled.div`
   padding: 0.4rem;
   margin: 0.4rem;
   border-radius: 0.5em;
-`
-
-const PriceWrapper = styled.p`
-  display: grid;
-  gap: 0.5rem;
-  grid-template-areas:
-    "original-prefix original-price"
-    "sale-prefix sale-price"
-    "installments installments";
-  grid-template-columns: min-content 2fr;
-  align-items: center;
 `
