@@ -2,6 +2,10 @@ import styled from "styled-components"
 import { Location } from "../common/Location"
 import { ContentContainer } from "../common/ContentLimit"
 import { useLocation } from "react-router-dom"
+import { product } from "../../assets/images/FakeAPIImages/Product"
+import CarouselProduct from "./CarouselProduct"
+import { Options } from "./Options"
+import { Price } from "./Price"
 
 export const Product = () => {
   const { pathname } = useLocation()
@@ -10,16 +14,19 @@ export const Product = () => {
   return (
     <ProductBackground>
       <ProductContainer>
-        <Location pathLabel={pathLabel} />
-        Produto
+        <CarouselProduct title={product.title} imagesList={product.images} />
+        <InfoWrapper>
+          <Location pathLabel={pathLabel} />
+          <TitleProduct>{product.title}</TitleProduct>
+          <Price product={product} />
+          <Options options={product.options} />
+        </InfoWrapper>
       </ProductContainer>
     </ProductBackground>
   )
 }
 
 const ProductBackground = styled.div`
-  background-color: ${(props) => props.theme.mediumGray};
-
   width: 100%;
 
   display: flex;
@@ -27,12 +34,31 @@ const ProductBackground = styled.div`
 `
 
 const ProductContainer = styled(ContentContainer)`
-  background-color: ${(props) => props.theme.mediumGray};
-
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 
   padding-bottom: 2rem;
   padding-top: 1.5rem;
+
+  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  margin-left: 3rem;
+  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+    width: 100%;
+    margin-left: 0;
+  }
+`
+
+const TitleProduct = styled.h1`
+  margin: 0;
+  font-size: 2.5em;
 `
