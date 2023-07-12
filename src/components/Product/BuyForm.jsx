@@ -8,7 +8,9 @@ export const BuyForm = ({ product }) => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(productOptions)
+    if (buttonActive()) {
+      console.log(productOptions)
+    }
   }
 
   function buttonActive() {
