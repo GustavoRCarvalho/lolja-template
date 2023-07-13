@@ -15,7 +15,6 @@ export const Home = () => {
     <HomeContainer>
       <BannnerCarousel />
       <InfoHomeLine />
-      <ContentContainer>HOME</ContentContainer>
       <SwiperWrapper
         list={ListCreators}
         title={"Encontre os produtos de seus creators favoritos"}

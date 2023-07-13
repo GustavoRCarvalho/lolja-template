@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { ContentContainer } from "../common/ContentLimit"
 import { AiFillCreditCard, AiFillYoutube } from "react-icons/ai"
 import { FaTruckFast } from "react-icons/fa6"
+import { GrayBackground } from "../common/GrayBackground"
 
 export const InfoHomeLine = () => {
   return (
@@ -24,14 +25,8 @@ export const InfoHomeLine = () => {
   )
 }
 
-const InfoBackground = styled.section`
-  background-color: ${(props) => props.theme.mediumGray};
-  width: 100%;
+const InfoBackground = styled(GrayBackground)`
   padding-block: 1rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `
 
 const InfoContainer = styled(ContentContainer)`

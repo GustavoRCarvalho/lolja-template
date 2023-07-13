@@ -11,7 +11,7 @@ const obj = {
   tamanhos: ["P", "M", "G", "2G"],
 }
 
-function createList(quantity) {
+export function createList(quantity) {
   let array = Array.apply(null, Array(quantity)).map(() => obj)
 
   return array
