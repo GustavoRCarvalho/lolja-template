@@ -7,11 +7,13 @@ import { useLocation } from "react-router"
 
 export const ProductCard = ({ product }) => {
   const { pathname } = useLocation()
+
+  const path = pathname.split("/")[1]
   const label = textRegexRouter(product.title)
 
   return (
     <NoStyleLinkRouter
-      to={`${textRegexRouter(pathname !== "/" ? pathname : "HOME")}/${label}`}
+      to={`/${textRegexRouter(pathname !== "/" ? path : "HOME")}/${label}`}
     >
       <Card>
         <ProductImage images={product.images} />
