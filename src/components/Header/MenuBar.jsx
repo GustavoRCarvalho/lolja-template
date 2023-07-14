@@ -105,7 +105,7 @@ const MenuItem = styled.li`
   align-items: center;
   height: 50px;
 
-  font-size: 12px;
+  font-size: 0.75em;
   font-weight: 600;
   letter-spacing: 0.15em;
   color: black;

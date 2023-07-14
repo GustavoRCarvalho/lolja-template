@@ -44,7 +44,7 @@ export const SwiperCategories = ({
 const CategoryButton = styled.button`
   background-color: ${(props) => props.theme.mediumGray};
   border-radius: 0.2rem;
-  font-size: 0.7;
+  font-size: 0.8em;
   font-weight: 700;
   letter-spacing: 0.23em;
   text-align: center;

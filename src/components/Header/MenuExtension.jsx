@@ -56,7 +56,7 @@ const ListMenu = styled.ul`
 
 const MenuItem = styled.li`
   color: #4f4f4f;
-  font-size: 13px;
+  font-size: 0.8em;
   letter-spacing: 0.03em;
   line-height: 2.5;
 
