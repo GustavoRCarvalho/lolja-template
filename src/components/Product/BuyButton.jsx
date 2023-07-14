@@ -40,6 +40,25 @@ export const BuyButton = ({ buttonActive, setProductOptions }) => {
   )
 }
 
+const OptionsContainer = styled.div`
+  max-width: 100%;
+  margin-block: 2em;
+
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    width: -webkit-fill-available;
+    margin: 0;
+    padding: 1em;
+    z-index: 100;
+  }
+`
+
 const CartIcon = styled(BsCartPlus)`
   width: 1.3em;
   height: 1.3em;
@@ -50,12 +69,14 @@ const CartIcon = styled(BsCartPlus)`
 const AddCardButton = styled.button`
   background-color: #00b081;
   transition: background-color 250ms;
+  color: #fff;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
 
   flex: 1;
+  max-width: 20em;
 
   cursor: ${(props) => (props.active ? "pointer" : "normal")};
   font-weight: bold;
@@ -70,13 +91,6 @@ const AddCardButton = styled.button`
     background-color: ${(props) => (props.active ? "#eb7e01" : "#00b081")};
     transition: background-color 250ms;
   }
-`
-
-const OptionsContainer = styled.div`
-  max-width: 100%;
-  margin-block: 2em;
-
-  display: flex;
 `
 
 const QuantityWrapper = styled.div`
