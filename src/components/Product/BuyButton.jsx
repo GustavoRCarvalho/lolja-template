@@ -55,7 +55,7 @@ const OptionsContainer = styled.div`
     width: -webkit-fill-available;
     margin: 0;
     padding: 1em;
-    z-index: 100;
+    z-index: 2;
   }
 `
 
