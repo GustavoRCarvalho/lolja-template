@@ -21,7 +21,7 @@ export default function Content(props) {
   )
 }
 
-const MainContainer = styled.div`
+const MainContainer = styled.main`
   width: 100%;
 
   display: flex;
