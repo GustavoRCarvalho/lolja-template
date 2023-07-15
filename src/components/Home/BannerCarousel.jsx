@@ -28,7 +28,6 @@ export const BannnerCarousel = () => {
 
 const CarouselContainer = styled(Carousel)`
   padding: 0;
-  z-index: 1;
 `
 
 const Image = styled.img``
