@@ -2,13 +2,28 @@ import styled from "styled-components"
 import { BuyButton } from "./BuyButton"
 import { Options } from "./Options"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addProductToCart } from "../../store/cartSlice"
 
 export const BuyForm = ({ product }) => {
+  const dispatch = useDispatch()
   const [productOptions, setProductOptions] = useState({ quantity: 1 })
 
   function handleSubmit(event) {
     event.preventDefault()
     if (buttonActive()) {
+      dispatch(
+        addProductToCart({
+          title: product.title,
+          price: product.price,
+          salePrice: product.salePrice,
+          image: product.images[0],
+          quantity: productOptions.quantity,
+          color: productOptions.cores,
+          size: productOptions.tamanho,
+          gender: productOptions.sexo ?? "unissex",
+        })
+      )
       console.log(productOptions)
     }
   }
