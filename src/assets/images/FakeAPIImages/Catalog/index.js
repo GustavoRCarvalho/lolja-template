@@ -60,7 +60,7 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
           "preto com branco",
           "preto com vermelho",
         ],
-        tamanho: ["2G", "G", "M", "P", "PP", "3G", "4G", "PPP", "5 - 7 ANOS"],
+        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
         sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
         preço: [39.9, 159.9],
         ordernar: [
@@ -97,7 +97,7 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
           "preto com branco",
           "preto com vermelho",
         ],
-        tamanho: ["2G", "G", "M", "P", "PP", "3G", "4G", "PPP", "5 - 7 ANOS"],
+        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
         sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
         preço: [39.9, 159.9],
         ordernar: [
