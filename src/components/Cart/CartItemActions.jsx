@@ -45,20 +45,6 @@ const ItemQuantity = styled.div`
   align-items: center;
 `
 
-const ItemRemove = styled.button`
-  background-color: #0000;
-
-  border: 1px solid #0000;
-  padding: 0 0.5em;
-
-  cursor: pointer;
-
-  :active {
-    border: 1px solid black;
-    transition: color 0.1s;
-  }
-`
-
 const RemoveIcon = styled(MdDeleteOutline)`
   width: 1.8em;
   height: 2.8em;
@@ -87,13 +73,33 @@ const QuantityButton = styled.button`
   font-weight: bold;
   letter-spacing: 0.03em;
 
+  border: none;
+  border-radius: 0.2em;
+
   :active {
     border: 1px solid black;
-    transition: color 0.1s;
   }
 
   cursor: pointer;
 
-  border: none;
   padding: 0;
+`
+
+const ItemRemove = styled.button`
+  background-color: #0000;
+
+  border: 1px solid #0000;
+  border-radius: 0.2em;
+  padding: 0 0.5em;
+
+  cursor: pointer;
+
+  :active {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+  }
+  :hover {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+  }
 `

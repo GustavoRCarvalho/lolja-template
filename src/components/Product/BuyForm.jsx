@@ -4,6 +4,7 @@ import { Options } from "./Options"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addProductToCart } from "../../store/cartSlice"
+import { switchCartModal } from "../../store/modalSlice"
 
 export const BuyForm = ({ product }) => {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ export const BuyForm = ({ product }) => {
           gender: productOptions.sexo ?? "unissex",
         })
       )
+      dispatch(switchCartModal())
       console.log(productOptions)
     }
   }

@@ -1,9 +1,9 @@
 import styled from "styled-components"
 import { GrClose } from "react-icons/gr"
 
-export const CloseModalButton = () => {
+export const CloseModalButton = ({ onClick }) => {
   return (
-    <CloseButton>
+    <CloseButton onClick={onClick}>
       <CloseIcon />
     </CloseButton>
   )

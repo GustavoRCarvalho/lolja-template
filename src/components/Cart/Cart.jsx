@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import { CartItem } from "./CartItem"
 import { CloseModalButton } from "../common/CloseModalButton"
+import { switchCartModal } from "../../store/modalSlice"
 
 export const Cart = () => {
+  const dispatch = useDispatch()
   const { listCart } = useSelector((state) => state.cart)
 
   function quantityCartItems(list) {
@@ -26,7 +28,7 @@ export const Cart = () => {
           Carrinho de compras{" "}
           <CartQuantity>({quantityCartItems(listCart)})</CartQuantity>
         </CartTitle>
-        <CloseModalButton />
+        <CloseModalButton onClick={() => dispatch(switchCartModal())} />
       </ItemWrapper>
       <CartContainer>
         {listCart.length !== 0 ? (
