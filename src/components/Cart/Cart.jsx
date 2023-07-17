@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { CartItem } from "./CartItem"
 import { CloseModalButton } from "../common/CloseModalButton"
 import { switchCartModal } from "../../store/modalSlice"
+import { CartFinal } from "./CartFinal"
 
 export const Cart = () => {
   const dispatch = useDispatch()
@@ -23,13 +24,13 @@ export const Cart = () => {
 
   return (
     <Modal>
-      <ItemWrapper>
+      <TitleWrapper>
         <CartTitle>
           Carrinho de compras{" "}
           <CartQuantity>({quantityCartItems(listCart)})</CartQuantity>
         </CartTitle>
         <CloseModalButton onClick={() => dispatch(switchCartModal())} />
-      </ItemWrapper>
+      </TitleWrapper>
       <CartContainer>
         {listCart.length !== 0 ? (
           listCart.map((product, index) => {
@@ -39,12 +40,11 @@ export const Cart = () => {
           <CartEmpty>Seu carrinho está vazio</CartEmpty>
         )}
       </CartContainer>
-      <ItemWrapper>
-        <CartTitle>
-          Carrinho de compras{" "}
-          <CartQuantity>({quantityCartItems(listCart)})</CartQuantity>
-        </CartTitle>
-      </ItemWrapper>
+      {listCart.length !== 0 && (
+        <FinalWrapper>
+          <CartFinal list={listCart} />
+        </FinalWrapper>
+      )}
     </Modal>
   )
 }
@@ -68,10 +68,20 @@ const Modal = styled.div`
   }
 `
 
-const ItemWrapper = styled.div`
+const TitleWrapper = styled.div`
   background-color: #fff;
   display: flex;
   align-items: center;
+
+  padding: 0.5em 1em;
+`
+
+const FinalWrapper = styled.div`
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   padding: 0.5em 1em;
 `
