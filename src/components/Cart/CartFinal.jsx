@@ -33,12 +33,12 @@ export const CartFinal = ({ list }) => {
       <FinalLine>
         <LabelTotal>Frete</LabelTotal> <LabelContinue>Calcular</LabelContinue>
       </FinalLine>
-      <NoStyleLinkRouter>
+      <FinalLink>
         <FinalButton>
           <LabelTotal>Finalizar pedido </LabelTotal>
           <LabelTotal>{totalPrice(list)}</LabelTotal>
         </FinalButton>
-      </NoStyleLinkRouter>
+      </FinalLink>
       <LabelContinue onClick={() => dispatch(switchCartModal())}>
         Continuar comprando
       </LabelContinue>
@@ -52,6 +52,10 @@ const LabelContinue = styled.span`
   text-decoration-line: underline;
 
   cursor: pointer;
+`
+const FinalLink = styled(NoStyleLinkRouter)`
+  width: 100%;
+  margin-block: 0.5em;
 `
 
 const FinalButton = styled.button`
