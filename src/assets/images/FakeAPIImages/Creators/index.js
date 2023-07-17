@@ -8,7 +8,7 @@ import castro from "./9_2_2_231_CASTROSBROTHERS.png"
 import nostalgia from "./9_2_9_922_NOSTALGIA.png"
 import felps from "./9_4_1_139_Design_sem_nome_1.png"
 
-export const ListCreators = {
+export const listCreators = {
   Destaques: [
     { creator: calango, name: "calango" },
     { creator: gabi, name: "gabi" },

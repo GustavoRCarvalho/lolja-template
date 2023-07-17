@@ -67,10 +67,12 @@ export const FilterButtons = ({
               handleClickPrice({ list: { ...list } })
             }}
           />
-          <PriceWrapper>
-            <PriceLabel>{moneyFormat(selectedFilters.preço[0])}</PriceLabel>
-            <PriceLabel>{moneyFormat(selectedFilters.preço[1])}</PriceLabel>
-          </PriceWrapper>
+          {selectedFilters.preço && (
+            <PriceWrapper>
+              <PriceLabel>{moneyFormat(selectedFilters.preço[0])}</PriceLabel>
+              <PriceLabel>{moneyFormat(selectedFilters.preço[1])}</PriceLabel>
+            </PriceWrapper>
+          )}
         </>
       )
     default:

@@ -1,20 +1,21 @@
 import styled from "styled-components"
 import { FilterCard } from "./FilterCard"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
-export const Filters = ({ filters = {}, setFilters }) => {
-  const selectedFiltersInitialState = {
-    preço: [...filters["preço"]],
-  }
-  const [selectedFilters, setSelectedFilters] = useState(
-    selectedFiltersInitialState
-  )
-
+export const Filters = ({
+  listFilters = {},
+  selectedFilters,
+  setSelectedFilters,
+}) => {
   useEffect(() => {
-    setFilters(selectedFilters)
-  }, [selectedFilters, setFilters])
+    setSelectedFilters({
+      preço: listFilters["preço"],
+    })
+  }, [listFilters, setSelectedFilters])
 
-  const categories = Object.keys(filters)
+  const categories = Object.keys(listFilters)
+
+  console.log(selectedFilters)
 
   return (
     <Filter>
@@ -23,13 +24,17 @@ export const Filters = ({ filters = {}, setFilters }) => {
         <FilterCard
           key={category}
           category={category}
-          filters={filters[category]}
+          filters={listFilters[category]}
           selectedFilters={selectedFilters}
           setSelectedFilters={setSelectedFilters}
         />
       ))}
       <FilterCleanText
-        onClick={() => setSelectedFilters(selectedFiltersInitialState)}
+        onClick={() =>
+          setSelectedFilters({
+            preço: listFilters["preço"],
+          })
+        }
       >
         Limpar Filtros
       </FilterCleanText>

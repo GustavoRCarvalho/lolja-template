@@ -17,14 +17,41 @@ export function createList(quantity) {
   return array
 }
 
-export const ListProducts = {
+export const listProducts = {
   "old skull": createList(12),
   guaxinim: createList(5),
   webtvbrasileira: createList(3),
   keira: createList(8),
 }
 
-export const ListCatalog = ({ name = "", quantity = 20 }) => {
+export const listFilter = () => {
+  return {
+    categoria: [
+      "camisetas",
+      "moletons",
+      "manga longa",
+      "regata",
+      "blusão",
+      "blusão cinza",
+      "raglan",
+    ],
+    cor: [
+      "preto",
+      "cinza",
+      "branco",
+      "marrom",
+      "chumbo",
+      "canela",
+      "preto com branco",
+      "preto com vermelho",
+    ],
+    tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
+    sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
+    preço: [39.9, 159.9],
+    ordernar: ["MAIS RECENTES", "MAIS ANTIGOS", "MENOR PREÇO", "MAIOR PREÇO"],
+  }
+}
+export const listCatalog = ({ name = "", quantity = 20 }) => {
   if (
     name === "calango" ||
     name === "gabi" ||
@@ -40,36 +67,6 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
       about: "",
       products: createList(quantity),
       totalPages: 5,
-      filters: {
-        categoria: [
-          "camisetas",
-          "moletons",
-          "manga longa",
-          "regata",
-          "blusão",
-          "blusão cinza",
-          "raglan",
-        ],
-        cor: [
-          "preto",
-          "cinza",
-          "branco",
-          "marrom",
-          "chumbo",
-          "canela",
-          "preto com branco",
-          "preto com vermelho",
-        ],
-        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
-        sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
-        preço: [39.9, 159.9],
-        ordernar: [
-          "MAIS RECENTES",
-          "MAIS ANTIGOS",
-          "MENOR PREÇO",
-          "MAIOR PREÇO",
-        ],
-      },
     }
   } else {
     return {
@@ -77,36 +74,6 @@ export const ListCatalog = ({ name = "", quantity = 20 }) => {
         "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark.",
       products: createList(quantity),
       totalPages: 5,
-      filters: {
-        categoria: [
-          "camisetas",
-          "moletons",
-          "manga longa",
-          "regata",
-          "blusão",
-          "blusão cinza",
-          "raglan",
-        ],
-        cor: [
-          "preto",
-          "cinza",
-          "branco",
-          "marrom",
-          "chumbo",
-          "canela",
-          "preto com branco",
-          "preto com vermelho",
-        ],
-        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
-        sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
-        preço: [39.9, 159.9],
-        ordernar: [
-          "MAIS RECENTES",
-          "MAIS ANTIGOS",
-          "MENOR PREÇO",
-          "MAIOR PREÇO",
-        ],
-      },
     }
   }
 }

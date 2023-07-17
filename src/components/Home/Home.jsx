@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { ContentContainer } from "../common/ContentLimit"
 import { BannnerCarousel } from "./BannerCarousel"
 import { InfoHomeLine } from "./InfoHomeLine"
-import { ListCreators } from "../../assets/images/FakeAPIImages/Creators"
-import { ListProducts } from "../../assets/images/FakeAPIImages/Catalog"
+import { listCreators } from "../../assets/images/FakeAPIImages/Creators"
+import { listProducts } from "../../assets/images/FakeAPIImages/Catalog"
 import { SwiperProducts } from "./SwiperProducts"
 import { SwiperCreators } from "./SwiperCreators"
 import { SwiperWrapper } from "./SwiperWrapper"
@@ -16,16 +16,16 @@ export const Home = () => {
       <BannnerCarousel />
       <InfoHomeLine />
       <SwiperWrapper
-        list={ListCreators}
+        list={listCreators}
         title={"Encontre os produtos de seus creators favoritos"}
         Swiper={SwiperCreators}
       />
       <PosterProductsContainer>
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
-        <SwiperProducts content={ListProducts["old skull"]} />
+        <SwiperProducts content={listProducts["old skull"]} />
       </PosterProductsContainer>
       <SwiperWrapper
-        list={ListProducts}
+        list={listProducts}
         title={"Lançamentos"}
         Swiper={SwiperProducts}
       />
@@ -36,7 +36,7 @@ export const Home = () => {
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
       </PosterContainer>
       <SwiperWrapper
-        list={ListProducts}
+        list={listProducts}
         title={"Mais vendidos"}
         Swiper={SwiperProducts}
       />

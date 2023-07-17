@@ -6,7 +6,10 @@ import { useLocation } from "react-router-dom"
 import { BannerHalf } from "./BannerHalf"
 import BannerHalfImage from "../../assets/images/FakeAPIImages/Banner/BannerHalf.png"
 import { useEffect, useState } from "react"
-import { ListCatalog } from "../../assets/images/FakeAPIImages/Catalog"
+import {
+  listCatalog,
+  listFilter,
+} from "../../assets/images/FakeAPIImages/Catalog"
 import { Filters } from "./Filters"
 import { CatalogProducts } from "./CatalogProducts"
 import { ColorRing } from "react-loader-spinner"
@@ -17,24 +20,28 @@ export const Catalog = (props) => {
   const [actualPage, setActualPage] = useState(1)
   const [loading, setLoading] = useState(false)
   const [catalog, setCatalog] = useState({})
-  const [filters, setFilters] = useState({})
+  const [selectedFilters, setSelectedFilters] = useState({})
+  const [listFilters, setListFilters] = useState({})
 
   useEffect(() => {
     setLoading(true)
-    const responseCatalog = ListCatalog({
-      name: pathLabel,
-      quantity: 18,
-      actualPage: actualPage,
-      filters: filters,
-    })
+    setCatalog({})
     setTimeout(() => {
-      setCatalog(responseCatalog)
+      setCatalog(
+        listCatalog({
+          name: pathLabel,
+          quantity: 18,
+          actualPage: actualPage,
+          filters: selectedFilters,
+        })
+      )
       setLoading(false)
     }, 1500)
-  }, [pathLabel, actualPage, filters])
+  }, [pathLabel, actualPage, selectedFilters])
 
   useEffect(() => {
     setCatalog({})
+    setListFilters(listFilter())
   }, [pathLabel])
 
   useEffect(() => {
@@ -60,8 +67,12 @@ export const Catalog = (props) => {
             colors={["#ff0516", "#ffe600", "#00ff22", "#00a2ff", "#b700ff"]}
           />
         </Loading>
-        {catalog.filters && (
-          <Filters filters={catalog.filters} setFilters={setFilters} />
+        {listFilters !== {} && (
+          <Filters
+            listFilters={listFilters}
+            selectedFilters={selectedFilters}
+            setSelectedFilters={setSelectedFilters}
+          />
         )}
         <CatalogProducts
           listProducts={catalog.products}
