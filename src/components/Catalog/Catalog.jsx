@@ -6,47 +6,23 @@ import { useLocation } from "react-router-dom"
 import { BannerHalf } from "./BannerHalf"
 import BannerHalfImage from "../../assets/images/FakeAPIImages/Banner/BannerHalf.png"
 import { useEffect, useState } from "react"
-import {
-  listCatalog,
-  listFilter,
-} from "../../assets/images/FakeAPIImages/Catalog"
+import { staticCatalogData } from "../../assets/images/FakeAPIImages/Catalog"
 import { Filters } from "./Filters"
 import { CatalogProducts } from "./CatalogProducts"
-import { ColorRing } from "react-loader-spinner"
+import { useDispatch } from "react-redux"
+import { setFilterPrice } from "../../store/filterSlice"
 
 export const Catalog = (props) => {
+  const dispatch = useDispatch()
   const { pathname } = useLocation()
   const pathLabel = pathname.replace("/", "").replace(/-/g, " ")
-  const [actualPage, setActualPage] = useState(1)
-  const [loading, setLoading] = useState(false)
-  const [catalog, setCatalog] = useState({})
-  const [selectedFilters, setSelectedFilters] = useState({})
-  const [listFilters, setListFilters] = useState({})
+  const [staticData, setStaticData] = useState({})
 
   useEffect(() => {
-    setLoading(true)
-    setCatalog({})
-    setTimeout(() => {
-      setCatalog(
-        listCatalog({
-          name: pathLabel,
-          quantity: 18,
-          actualPage: actualPage,
-          filters: selectedFilters,
-        })
-      )
-      setLoading(false)
-    }, 1500)
-  }, [pathLabel, actualPage, selectedFilters])
-
-  useEffect(() => {
-    setCatalog({})
-    setListFilters(listFilter())
-  }, [pathLabel])
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [actualPage])
+    const staticResponse = staticCatalogData({ name: pathLabel })
+    setStaticData(staticResponse)
+    dispatch(setFilterPrice(staticResponse.filters["preço"]))
+  }, [pathLabel, dispatch])
 
   return (
     <CatalogBackground>
@@ -54,31 +30,16 @@ export const Catalog = (props) => {
       <ColorBackground>
         <TitleContainer>
           <Location pathLabel={pathLabel} />
-          <CatalogTitle pathLabel={pathLabel} about={catalog.about} />
+          <CatalogTitle pathLabel={pathLabel} about={staticData.about} />
         </TitleContainer>
       </ColorBackground>
       <CatalogContainer>
-        <Loading>
-          <ColorRing
-            visible={loading}
-            height="60"
-            width="60"
-            ariaLabel="blocks-loading"
-            colors={["#ff0516", "#ffe600", "#00ff22", "#00a2ff", "#b700ff"]}
-          />
-        </Loading>
-        {listFilters !== {} && (
-          <Filters
-            listFilters={listFilters}
-            selectedFilters={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-          />
+        {staticData?.filters !== {} && (
+          <Filters listFilters={staticData.filters} />
         )}
         <CatalogProducts
-          listProducts={catalog.products}
-          totalPages={catalog.totalPages}
-          actualPage={actualPage}
-          setActualPage={setActualPage}
+          pathLabel={pathLabel}
+          totalPages={staticData.totalPages}
         />
       </CatalogContainer>
     </CatalogBackground>
@@ -91,10 +52,6 @@ const CatalogBackground = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-
-const Loading = styled.div`
-  position: absolute;
 `
 
 const ColorBackground = styled.div`

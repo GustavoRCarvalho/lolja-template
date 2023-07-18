@@ -1,7 +1,8 @@
+import { memo } from "react"
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai"
 import styled from "styled-components"
 
-export const Pagination = ({ actualPage, setActualPage, totalPages }) => {
+export const Pagination = memo(({ actualPage, setActualPage, totalPages }) => {
   const leftPage = actualPage - 1
   const rightPage = actualPage === totalPages ? 0 : actualPage + 1
 
@@ -45,7 +46,7 @@ export const Pagination = ({ actualPage, setActualPage, totalPages }) => {
       )}
     </PaginationContainer>
   )
-}
+})
 
 const PaginationNumber = styled.button`
   background-color: transparent;

@@ -2,57 +2,46 @@ import styled from "styled-components"
 import RangeSlider from "react-range-slider-input"
 import "react-range-slider-input/dist/style.css"
 import { moneyFormat } from "../common/MoneyFormat"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  setFilter,
+  setFilterPrice,
+  setFilterRadio,
+} from "../../store/filterSlice"
 
-export const FilterButtons = ({
-  category,
-  list,
-  selectedFilters,
-  setSelectedFilters,
-}) => {
+export const FilterButtons = ({ category, filtersLabels }) => {
+  const dispatch = useDispatch()
+  const { filters } = useSelector((state) => state.filter)
+
   const handleClickPrice = ({ list }) => {
-    setSelectedFilters((value) => {
-      return {
-        ...value,
-        preço: [list[0], list[1]],
-      }
-    })
+    dispatch(setFilterPrice(list))
   }
   const handleClickRadio = ({ label }) => {
-    setSelectedFilters((value) => {
-      return {
-        ...value,
-        "MAIS RECENTES": false,
-        "MAIS ANTIGOS": false,
-        "MENOR PREÇO": false,
-        "MAIOR PREÇO": false,
-        [label]: !value[label],
-      }
-    })
+    dispatch(setFilterRadio(label))
   }
   const handleClickButton = ({ label }) => {
-    setSelectedFilters((value) => {
-      return { ...value, [label]: !value[label] }
-    })
+    dispatch(setFilter(label))
   }
 
   switch (category) {
-    case "categoria":
-      return list.map((label) => (
+    case "categoria": {
+      return filtersLabels.map((label) => (
         <FilterRadioWrapper
           key={label}
           onClick={() => handleClickButton({ label })}
         >
-          <RadioButton active={selectedFilters[label]} />
+          <RadioButton active={filters[label]} />
           {label}
         </FilterRadioWrapper>
       ))
+    }
     case "ordernar":
-      return list.map((label) => (
+      return filtersLabels.map((label) => (
         <FilterRadioWrapper
           key={label}
           onClick={() => handleClickRadio({ label })}
         >
-          <RadioButton active={selectedFilters[label]} />
+          <RadioButton active={filters[label]} />
           {label}
         </FilterRadioWrapper>
       ))
@@ -60,26 +49,27 @@ export const FilterButtons = ({
       return (
         <>
           <SliderPrice
-            min={list[0]}
-            max={list[1]}
-            value={selectedFilters["preço"]}
+            min={filtersLabels[0]}
+            max={filtersLabels[1]}
+            step={10}
+            value={filters["preço"]}
             onInput={(list) => {
               handleClickPrice({ list: { ...list } })
             }}
           />
-          {selectedFilters.preço && (
+          {filters.preço && (
             <PriceWrapper>
-              <PriceLabel>{moneyFormat(selectedFilters.preço[0])}</PriceLabel>
-              <PriceLabel>{moneyFormat(selectedFilters.preço[1])}</PriceLabel>
+              <PriceLabel>{moneyFormat(filters.preço[0])}</PriceLabel>
+              <PriceLabel>{moneyFormat(filters.preço[1])}</PriceLabel>
             </PriceWrapper>
           )}
         </>
       )
     default:
-      return list.map((label) => (
+      return filtersLabels.map((label) => (
         <FilterButton
           key={label}
-          active={selectedFilters[label]}
+          active={filters[label]}
           onClick={() => handleClickButton({ label })}
         >
           {label}

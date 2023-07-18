@@ -1,21 +1,11 @@
 import styled from "styled-components"
 import { FilterCard } from "./FilterCard"
-import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { resetFilter } from "../../store/filterSlice"
 
-export const Filters = ({
-  listFilters = {},
-  selectedFilters,
-  setSelectedFilters,
-}) => {
-  useEffect(() => {
-    setSelectedFilters({
-      preço: listFilters["preço"],
-    })
-  }, [listFilters, setSelectedFilters])
-
+export const Filters = ({ listFilters = {} }) => {
+  const dispatch = useDispatch()
   const categories = Object.keys(listFilters)
-
-  console.log(selectedFilters)
 
   return (
     <Filter>
@@ -24,18 +14,10 @@ export const Filters = ({
         <FilterCard
           key={category}
           category={category}
-          filters={listFilters[category]}
-          selectedFilters={selectedFilters}
-          setSelectedFilters={setSelectedFilters}
+          filtersLabels={listFilters[category]}
         />
       ))}
-      <FilterCleanText
-        onClick={() =>
-          setSelectedFilters({
-            preço: listFilters["preço"],
-          })
-        }
-      >
+      <FilterCleanText onClick={() => dispatch(resetFilter())}>
         Limpar Filtros
       </FilterCleanText>
     </Filter>

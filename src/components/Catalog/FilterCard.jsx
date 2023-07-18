@@ -4,12 +4,7 @@ import { AiFillCaretDown } from "react-icons/ai"
 import { AiFillCaretUp } from "react-icons/ai"
 import { FilterButtons } from "./FilterButtons"
 
-export const FilterCard = ({
-  category,
-  filters,
-  selectedFilters,
-  setSelectedFilters,
-}) => {
+export const FilterCard = ({ category, filtersLabels }) => {
   const [showCard, setShowCard] = useState(true)
 
   return (
@@ -19,12 +14,7 @@ export const FilterCard = ({
       </CategoryDropdown>
       {showCard && (
         <FiltersWrapper>
-          <FilterButtons
-            category={category}
-            list={filters}
-            selectedFilters={selectedFilters}
-            setSelectedFilters={setSelectedFilters}
-          />
+          <FilterButtons category={category} filtersLabels={filtersLabels} />
         </FiltersWrapper>
       )}
     </FiltrosContainer>
