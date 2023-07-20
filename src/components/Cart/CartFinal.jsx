@@ -21,6 +21,9 @@ export const CartFinal = ({ list }) => {
     return moneyFormat(total / 6)
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+  }
   return (
     <>
       <FinalLine>
@@ -34,7 +37,7 @@ export const CartFinal = ({ list }) => {
         <LabelTotal>Frete</LabelTotal> <LabelContinue>Calcular</LabelContinue>
       </FinalLine>
       <FinalLink>
-        <FinalButton>
+        <FinalButton onClick={handleSubmit}>
           <LabelTotal>Finalizar pedido </LabelTotal>
           <LabelTotal>{totalPrice(list)}</LabelTotal>
         </FinalButton>
