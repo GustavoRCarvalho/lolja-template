@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Options = ({ options, productOptions, setProductOptions }) => {
-  const optionsKeys = Object.keys(options)
+  const optionsKeys = Object.keys(options ?? {})
   return (
     <OptionsContainer>
       {optionsKeys.map((option) => {

@@ -14,9 +14,13 @@ const CarouselContainer = styled(Carousel)`
       display: none;
     }
   }
+
+  .control-arrow {
+    z-index: 1 !important;
+  }
 `
 
-export default function CarouselProduct({ title, imagesList }) {
+export default function CarouselProduct({ title, imagesList = [] }) {
   return (
     <CarouselContainer emulateTouch={true}>
       {imagesList.map((src, index) => {

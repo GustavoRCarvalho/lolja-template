@@ -11,10 +11,12 @@ export const Price = ({ product }) => {
         </PriceOriginal>
         <PriceSaleLabel>POR:</PriceSaleLabel>
         <PriceSale>{moneyFormat(product.salePrice)}</PriceSale>
-        <PriceInstallment>
-          {product.installmentsPrice[0]}x de{" "}
-          {moneyFormat(product.installmentsPrice[1])} sem juros
-        </PriceInstallment>
+        {product.installmentsPrice && (
+          <PriceInstallment>
+            {product.installmentsPrice[0]}x de{" "}
+            {moneyFormat(product.installmentsPrice[1])} sem juros
+          </PriceInstallment>
+        )}
       </PriceWrapper>
       <SalePorcent>{product.salePorcent}</SalePorcent>
     </PriceContainer>

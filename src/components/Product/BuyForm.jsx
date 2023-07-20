@@ -26,12 +26,11 @@ export const BuyForm = ({ product }) => {
         })
       )
       dispatch(switchCartModal())
-      console.log(productOptions)
     }
   }
 
   function buttonActive() {
-    let options = Object.keys(product.options)
+    let options = Object.keys(product.options ?? {})
     options.push("quantity")
 
     const selectList = JSON.stringify(Object.keys(productOptions).sort())
