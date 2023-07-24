@@ -55,6 +55,10 @@ const HomeContainer = styled.div`
 const PosterProductsContainer = styled(ContentContainer)`
   display: grid;
   grid-template-columns: 50% 50%;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 100%;
+  }
 `
 
 const PosterContainer = styled(ContentContainer)`
@@ -63,4 +67,8 @@ const PosterContainer = styled(ContentContainer)`
   row-gap: 1%;
   grid-template-columns: 49% 49%;
   margin-bottom: 2rem;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 100%;
+    row-gap: 0;
+  }
 `
