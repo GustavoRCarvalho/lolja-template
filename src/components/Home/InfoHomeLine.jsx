@@ -32,6 +32,11 @@ const InfoBackground = styled(GrayBackground)`
 const InfoContainer = styled(ContentContainer)`
   display: flex;
   justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `
 
 const InfoItem = styled.div`
@@ -41,26 +46,21 @@ const InfoItem = styled.div`
   font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.15em;
+  margin-inline: 1rem;
 `
 
 const IconCard = styled(AiFillCreditCard)`
   height: 1.5rem;
   width: 1.5rem;
   padding-right: 1.5rem;
-
-  cursor: pointer;
 `
 const IconYoutube = styled(AiFillYoutube)`
   height: 1.5rem;
   width: 1.5rem;
   padding-right: 1.5rem;
-
-  cursor: pointer;
 `
 const IconTruck = styled(FaTruckFast)`
   height: 1.5rem;
   width: 1.5rem;
   padding-right: 1.5rem;
-
-  cursor: pointer;
 `

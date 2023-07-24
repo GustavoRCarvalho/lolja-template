@@ -27,6 +27,7 @@ export const BannnerCarousel = () => {
 }
 
 const CarouselContainer = styled(Carousel)`
+  max-width: 100vw;
   padding: 0;
 `
 
