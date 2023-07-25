@@ -18,6 +18,8 @@ export const SwiperCreators = ({ content = [] }) => {
 
 const SwiperSlideComponent = styled(SwiperSlide)`
   max-width: 140px;
+  width: 30%;
+  min-width: 105px;
 `
 
 const CreatorImage = styled.img`
