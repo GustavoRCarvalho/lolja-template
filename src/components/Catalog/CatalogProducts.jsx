@@ -80,6 +80,10 @@ const ProductsWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media screen and (max-width: 1024px) {
+    margin-top: 4rem;
   }
 `
 
