@@ -103,6 +103,7 @@ const ListMenu = styled.ul`
 const MenuItem = styled.li`
   display: flex;
   align-items: center;
+  text-align: center;
   height: 50px;
 
   font-size: 0.75em;

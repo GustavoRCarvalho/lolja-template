@@ -1,9 +1,14 @@
 import { useSelector } from "react-redux"
 import { CartModal } from "../components/Cart/CartModal"
-// import { Cart } from "../Pages"
+import { FilterModal } from "../components/Catalog/FilterModal"
 
 export default function Modals() {
-  const { cartModal } = useSelector((state) => state.modal)
+  const { cartModal, filterModal } = useSelector((state) => state.modal)
 
-  return <>{cartModal ? <CartModal /> : null}</>
+  return (
+    <>
+      {cartModal ? <CartModal /> : null}
+      <FilterModal display={filterModal ? "block" : "none"} />
+    </>
+  )
 }

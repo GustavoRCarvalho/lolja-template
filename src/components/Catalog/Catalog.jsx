@@ -34,8 +34,11 @@ export const Catalog = (props) => {
         </TitleContainer>
       </ColorBackground>
       <CatalogContainer>
-        {staticData?.filters !== {} && (
-          <Filters listFilters={staticData.filters} />
+        {JSON.stringify(staticData) !== "{}" && (
+          <FiltersDesktop>
+            <FilterTitle>Filtros</FilterTitle>
+            <Filters listFilters={staticData.filters} />
+          </FiltersDesktop>
         )}
         <CatalogProducts
           pathLabel={pathLabel}
@@ -78,4 +81,16 @@ const CatalogContainer = styled(ContentContainer)`
   justify-content: center;
 
   padding-bottom: 2rem;
+`
+
+const FiltersDesktop = styled.div`
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+`
+
+const FilterTitle = styled.h2`
+  width: 100%;
+
+  font-size: 2em;
 `

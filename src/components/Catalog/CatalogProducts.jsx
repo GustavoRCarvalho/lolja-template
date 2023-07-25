@@ -6,6 +6,7 @@ import { ColorRing } from "react-loader-spinner"
 import { useState } from "react"
 import { listCatalog } from "../../assets/images/FakeAPIImages/Catalog"
 import { useSelector } from "react-redux"
+import { FilterMobileButton } from "./FilterMobileButton"
 
 export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
   const { filters } = useSelector((state) => state.filter)
@@ -38,6 +39,7 @@ export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
 
   return (
     <ProductsContainer>
+      <FilterMobileButton />
       <Loading>
         <ColorRing
           visible={loading}
@@ -83,7 +85,7 @@ const ProductsWrapper = styled.div`
     gap: 1rem;
   }
   @media screen and (max-width: 1024px) {
-    margin-top: 4rem;
+    margin-top: 2rem;
   }
 `
 

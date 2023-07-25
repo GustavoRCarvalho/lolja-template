@@ -22,4 +22,5 @@ const Title = styled.h1`
 const Paragraph = styled.p`
   font-size: 1em;
   margin: 1rem 0 0;
+  text-align: center;
 `

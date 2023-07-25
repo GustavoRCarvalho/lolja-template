@@ -62,10 +62,6 @@ const Modal = styled.div`
   @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
     width: 100%;
   }
-
-  ::-webkit-scrollbar {
-    /* width: 0rem; */
-  }
 `
 
 const TitleWrapper = styled.div`

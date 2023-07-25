@@ -5,7 +5,7 @@ import { AiFillCaretUp } from "react-icons/ai"
 import { FilterButtons } from "./FilterButtons"
 
 export const FilterCard = ({ category, filtersLabels }) => {
-  const [showCard, setShowCard] = useState(true)
+  const [showCard, setShowCard] = useState(window.screen.width > 1024)
 
   return (
     <FiltrosContainer>
@@ -41,6 +41,10 @@ const FiltrosContainer = styled.div`
   padding: 0.7em;
 
   margin-block: 1em;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+  }
 `
 
 const FiltersWrapper = styled.div`

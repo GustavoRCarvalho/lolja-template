@@ -3,13 +3,12 @@ import { FilterCard } from "./FilterCard"
 import { useDispatch } from "react-redux"
 import { resetFilter } from "../../store/filterSlice"
 
-export const Filters = ({ listFilters = {} }) => {
+export const Filters = ({ listFilters = {} }, props) => {
   const dispatch = useDispatch()
   const categories = Object.keys(listFilters)
 
   return (
-    <Filter>
-      <FilterTitle>Filtros</FilterTitle>
+    <Filter {...props}>
       {categories.map((category) => (
         <FilterCard
           key={category}
@@ -31,18 +30,20 @@ const FilterCleanText = styled.div`
   text-decoration: underline;
 
   cursor: pointer;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+    margin-bottom: 1em;
+  }
 `
 
 const Filter = styled.div`
   margin-right: 3em;
-
   @media screen and (max-width: 1024px) {
-    display: none;
+    margin-inline: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-`
-
-const FilterTitle = styled.h2`
-  width: 100%;
-
-  font-size: 2em;
 `

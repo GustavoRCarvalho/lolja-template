@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   cartModal: false,
+  filterModal: false,
 }
 
 const modalSlice = createSlice({
@@ -11,8 +12,11 @@ const modalSlice = createSlice({
     switchCartModal: (state, _) => {
       state.cartModal = !state.cartModal
     },
+    switchFilterModal: (state, _) => {
+      state.filterModal = !state.filterModal
+    },
   },
 })
 
-export const { switchCartModal } = modalSlice.actions
+export const { switchCartModal, switchFilterModal } = modalSlice.actions
 export default modalSlice.reducer
