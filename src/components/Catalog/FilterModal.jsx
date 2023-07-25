@@ -8,7 +8,6 @@ import { staticCatalogData } from "../../assets/images/FakeAPIImages/Catalog"
 import { useLocation } from "react-router-dom"
 import { setFilterPrice } from "../../store/filterSlice"
 import { useState } from "react"
-import { useMemo } from "react"
 import { CloseModalButton } from "../common/CloseModalButton"
 
 export const FilterModal = (props) => {
