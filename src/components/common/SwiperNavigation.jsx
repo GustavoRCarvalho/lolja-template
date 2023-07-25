@@ -28,10 +28,10 @@ export const SwiperNavigation = ({ children, slidesPerView = "auto" }) => {
       >
         {children}
       </SwiperComponent>
-      <SwiperButton left={0} ref={navigationPrevRef}>
+      <SwiperButton title="navPrev" left={0} ref={navigationPrevRef}>
         <LeftIcon />
       </SwiperButton>
-      <SwiperButton right={0} ref={navigationNextRef}>
+      <SwiperButton title="navNext" right={0} ref={navigationNextRef}>
         <RightIcon />
       </SwiperButton>
     </SwiperWrapper>
@@ -49,6 +49,10 @@ const SwiperWrapper = styled.div`
 const SwiperComponent = styled(Swiper)`
   margin-inline: 40px;
   padding-bottom: 2rem;
+
+  @media screen and (max-width: 768px) {
+    margin-inline: 0;
+  }
 
   .swiper-pagination {
     display: flex;
@@ -77,6 +81,10 @@ const SwiperButton = styled.button`
   left: ${(props) => props.left ?? "auto"};
   cursor: pointer;
   padding: 0;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const RightIcon = styled(FaCaretRight)`

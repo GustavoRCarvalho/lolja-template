@@ -19,4 +19,8 @@ export const SwiperProducts = ({ content = [] }) => {
 
 const SwiperSlideComponent = styled(SwiperSlide)`
   max-width: 300px;
+  width: 50%;
+  @media screen and (max-width: 1024px) {
+    max-width: 250px;
+  }
 `

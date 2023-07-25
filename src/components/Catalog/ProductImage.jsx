@@ -11,10 +11,14 @@ export const ProductImage = ({ images }) => {
 
 const CardImage = styled.figure`
   position: relative;
-  height: 100%;
+  height: 50vw;
   width: 100%;
 
   margin: 0;
+
+  @media screen and (max-width: 1024px) {
+    max-height: 240px;
+  }
 `
 
 const Image = styled.img`

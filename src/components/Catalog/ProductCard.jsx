@@ -40,9 +40,7 @@ export const ProductCard = ({ product }) => {
 
 const Card = styled.div`
   position: relative;
-  height: 60vh;
   max-height: 500px;
-  width: 100%;
 
   display: flex;
   flex-direction: column;
