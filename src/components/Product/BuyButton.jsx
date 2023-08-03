@@ -21,11 +21,23 @@ export const BuyButton = ({ buttonActive, setProductOptions }) => {
   return (
     <OptionsContainer>
       <QuantityWrapper>
-        <QuantityButton onClick={() => clickQuatityButton(-1)}>
+        <QuantityButton
+          onClick={(e) => {
+            e.preventDefault()
+            clickQuatityButton(-1)
+          }}
+        >
           -
         </QuantityButton>
         <QuantityInput readOnly value={quantity} />
-        <QuantityButton onClick={() => clickQuatityButton(1)}>+</QuantityButton>
+        <QuantityButton
+          onClick={(e) => {
+            e.preventDefault()
+            clickQuatityButton(1)
+          }}
+        >
+          +
+        </QuantityButton>
       </QuantityWrapper>
       <AddCardButton active={buttonActive} type="submit">
         {buttonActive ? (
