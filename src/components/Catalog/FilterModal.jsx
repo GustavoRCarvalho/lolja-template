@@ -26,7 +26,6 @@ export const FilterModal = (props) => {
     const staticResponse = staticCatalogData({ name: pathLabel })
     setStaticData(staticResponse)
     dispatch(setFilterPrice(staticResponse?.filters?.["preço"]))
-    console.log("effect modal filter")
   }, [pathLabel, dispatch])
 
   return (
