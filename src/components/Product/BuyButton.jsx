@@ -8,13 +8,19 @@ export const BuyButton = ({ buttonActive, setProductOptions }) => {
   const clickQuatityButton = (changeValue) => {
     setQuantity((value) => {
       const newValue = value + changeValue
+      console.log("newValue: ", newValue)
       if ((newValue !== 0) & (newValue < 100)) {
         return newValue
       }
       return value
     })
     setProductOptions((value) => {
-      return { ...value, quantity: quantity }
+      const newValue = quantity + changeValue
+      console.log("quantity: ", newValue)
+      if ((newValue !== 0) & (newValue < 100)) {
+        return { ...value, quantity: newValue }
+      }
+      return value
     })
   }
 
