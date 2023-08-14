@@ -7,7 +7,6 @@ Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.
 ### Base: 
 
 [React](https://github.com/facebook/react) <br />
-[Vite React](https://github.com/vitejs/vite-plugin-react) <br />
 
 ### Estilos:
 
