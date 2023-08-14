@@ -16,8 +16,8 @@ Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.
 
 ### Gerenciamento:
 
-[react redux](https://github.com/reduxjs/redux-toolkit)
-[react router dom](https://github.com/remix-run/react-router)
+[react redux](https://github.com/reduxjs/redux-toolkit) <br />
+[react router dom](https://github.com/remix-run/react-router) <br />
 
 ## Funcionalidades Principais
 
