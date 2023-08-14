@@ -1,5 +1,8 @@
 # Réplica da Loja de Roupas Geek "[Lolja.com](https://www.lolja.com.br/)"
 
+Acesse: [Lolja Réplica](https://lolja.xn--gustavocarvalhoportflio-pjc.com.br/) <br />
+Este site está hospedado na plataforma Amazon Amplify.
+
 Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.com". Como o nome sujere, o projeto ofecere uma versão feita a mão que replica o site original, feito na intenção de praticar e estudar a criação de interfaces webs.
 
 ## Tecnologias Utilizadas
