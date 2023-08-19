@@ -4,11 +4,13 @@ import { Logo } from "./Logo"
 import { UserCart } from "./UserCart"
 import { ContentContainer } from "../common/ContentLimit"
 import { Menu } from "./Menu"
+import { MenuMobileButton } from "./MenuMobileButton"
 
 export const Header = () => {
   return (
     <ContainerHeader>
       <ContainerSearch>
+        <MenuMobileButton />
         <Logo />
         <Search />
         <UserCart />
@@ -35,6 +37,7 @@ const ContainerHeader = styled.header`
 
 const ContainerSearch = styled(ContentContainer)`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-block: 0.5rem;
 `

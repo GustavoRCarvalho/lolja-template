@@ -14,8 +14,8 @@ const CloseButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  width: 2em;
-  height: 2em;
+  width: 3em;
+  height: 3em;
 
   border-radius: 50%;
 
@@ -25,4 +25,7 @@ const CloseButton = styled.button`
   cursor: pointer;
 `
 
-const CloseIcon = styled(GrClose)``
+const CloseIcon = styled(GrClose)`
+  width: 1.5em;
+  height: 1.5em;
+`

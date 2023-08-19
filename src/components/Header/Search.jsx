@@ -13,16 +13,18 @@ export const Search = (props) => {
   }
 
   return (
-    <FormSearch onSubmit={handleSearch}>
-      <InputSearch
-        onChange={(e) => setSearch(e.target.value)}
-        title="Search Input"
-        placeholder="Busque por creators, produtos, temas, etc..."
-      />
-      <SearchButton type="submit" title="Search Button">
-        <IconSearch />
-      </SearchButton>
-    </FormSearch>
+    <>
+      <FormSearch onSubmit={handleSearch}>
+        <InputSearch
+          onChange={(e) => setSearch(e.target.value)}
+          title="Search Input"
+          placeholder="Busque por creators, produtos, temas, etc..."
+        />
+        <SearchButton type="submit" title="Search Button">
+          <IconSearch />
+        </SearchButton>
+      </FormSearch>
+    </>
   )
 }
 
@@ -36,6 +38,10 @@ const FormSearch = styled.form`
 
   border: 1px solid #9a9a9a;
   border-radius: 0.5rem;
+
+  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+    display: none;
+  }
 `
 
 const InputSearch = styled.input`
