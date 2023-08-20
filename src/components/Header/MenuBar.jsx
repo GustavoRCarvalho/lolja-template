@@ -118,9 +118,7 @@ const MenuItem = styled.li`
 
   :hover {
     color: #fc6133;
-    transition: color 250ms;
 
     text-decoration-line: underline;
-    transition: text-decoration-line 250ms;
   }
 `
