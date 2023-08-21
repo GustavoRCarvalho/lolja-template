@@ -18,9 +18,9 @@ export const Product = () => {
   const { pathname } = useLocation()
   const [loading, setLoading] = useState(false)
   const [productData, setProductData] = useState({})
-  const pathArray = pathname.replace("/", "").replace(/-/g, "").split("/")
-  const pathLabel = pathArray[0]
-  const title = pathArray[1]
+  const pathArray = pathname.replace("/", "").split("/")
+  const pathLabel = decodeURI(pathArray[0])
+  const title = decodeURI(pathArray[1])
   const productDataFinish = JSON.stringify(productData) !== "{}"
 
   useEffect(() => {

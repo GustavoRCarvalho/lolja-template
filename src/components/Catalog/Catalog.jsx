@@ -15,7 +15,7 @@ import { setFilterPrice } from "../../store/filterSlice"
 export const Catalog = (props) => {
   const dispatch = useDispatch()
   const { pathname } = useLocation()
-  const pathLabel = pathname.replace("/", "").replace(/-/g, " ")
+  const pathLabel = decodeURI(pathname.replace("/", "").replace(/-/g, " "))
   const [staticData, setStaticData] = useState({})
 
   useEffect(() => {

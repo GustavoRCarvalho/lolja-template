@@ -1,13 +1,11 @@
 import styled from "styled-components"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
-import { textRegexRouter } from "../common/textRegexRouter"
 
 export const MenuExtension = ({ menuBarExtension }) => {
   function menuListItems(list) {
     return list.map((item) => {
-      const label = textRegexRouter(item)
       return (
-        <NoStyleLinkRouter to={`/${label}`} key={item}>
+        <NoStyleLinkRouter to={`/${item}`} key={item}>
           <MenuItem>{item}</MenuItem>
         </NoStyleLinkRouter>
       )

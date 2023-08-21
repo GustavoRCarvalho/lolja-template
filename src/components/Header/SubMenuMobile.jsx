@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
-import { textRegexRouter } from "../common/textRegexRouter"
 import { switchMenuModal } from "../../store/modalSlice"
 import { useDispatch } from "react-redux"
 
@@ -9,10 +8,9 @@ export const SubMenuMobile = ({ list, setMenuExtension }) => {
 
   function menuListItems(list) {
     return list.map((item) => {
-      const label = textRegexRouter(item)
       return (
-        <MenuItem>
-          <NoStyleLinkRouter to={`/${label}`} key={item}>
+        <MenuItem key={item}>
+          <NoStyleLinkRouter to={`/${item}`} key={item}>
             <MenuItemSpan
               onClick={() => {
                 setMenuExtension([])

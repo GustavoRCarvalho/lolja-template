@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
-import { textRegexRouter } from "../common/textRegexRouter"
 import { switchMenuModal } from "../../store/modalSlice"
 import { AiFillCaretRight } from "react-icons/ai"
 import { useDispatch } from "react-redux"
@@ -77,10 +76,9 @@ export const MenuMobile = ({ setMenuExtension }) => {
 
   function menuListItems(list) {
     return list.map((item) => {
-      const label = textRegexRouter(item)
       return (
-        <MenuItem key={label}>
-          <NoStyleLinkRouter to={`/${label}`} key={item}>
+        <MenuItem key={item}>
+          <NoStyleLinkRouter to={`/${item}`} key={item}>
             <MenuItemSpan onClick={() => dispatch(switchMenuModal())}>
               {item}
             </MenuItemSpan>
