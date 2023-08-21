@@ -5,6 +5,8 @@ import styled from "styled-components"
 import { CloseModalButton } from "../common/CloseModalButton"
 import { MenuMobile } from "./MenuMobile"
 import { useState } from "react"
+import { SubMenuMobile } from "./SubMenuMobile"
+import { AiFillCaretLeft } from "react-icons/ai"
 
 export const MenuMobileModal = (props) => {
   const [menuExtension, setMenuExtension] = useState([])
@@ -12,6 +14,7 @@ export const MenuMobileModal = (props) => {
 
   function handleClose(id) {
     if (id === "modalMenu") {
+      setMenuExtension([])
       dispatch(switchMenuModal())
     }
   }
@@ -27,7 +30,24 @@ export const MenuMobileModal = (props) => {
           <CartTitle>Menu</CartTitle>
           <CloseModalButton onClick={() => dispatch(switchMenuModal())} />
         </TitleWrapper>
-        <MenuMobile setMenuExtension={setMenuExtension} />
+        {JSON.stringify(menuExtension) === "[]" ? (
+          <MenuMobile setMenuExtension={setMenuExtension} />
+        ) : (
+          <>
+            <BackButton
+              onClick={() => {
+                setMenuExtension([])
+              }}
+            >
+              <BackIcon />
+              <BackSpan>Voltar</BackSpan>
+            </BackButton>
+            <SubMenuMobile
+              list={menuExtension}
+              setMenuExtension={setMenuExtension}
+            />
+          </>
+        )}
       </Modal>
     </Background>
   )
@@ -61,7 +81,8 @@ const Modal = styled.div`
   flex-direction: column;
 
   height: 100%;
-  width: 30rem;
+  width: 40em;
+  max-width: 90%;
 
   color: #141414;
 
@@ -76,8 +97,32 @@ const Modal = styled.div`
     border: 0;
     border-radius: 10px;
   }
+`
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
-    width: 100%;
+const BackIcon = styled(AiFillCaretLeft)`
+  cursor: pointer;
+`
+
+const BackSpan = styled.span`
+  flex: 1;
+`
+
+const BackButton = styled.button`
+  display: flex;
+  align-items: center;
+  border: none;
+
+  margin: 1em 1em 0 1em;
+  padding-block: 0.7em;
+
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  :hover {
+    color: #fc6133;
   }
 `

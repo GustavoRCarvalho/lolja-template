@@ -2,6 +2,7 @@ import styled from "styled-components"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 import { textRegexRouter } from "../common/textRegexRouter"
 import { switchMenuModal } from "../../store/modalSlice"
+import { AiFillCaretRight } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 
 const menuOptions = {
@@ -78,20 +79,46 @@ export const MenuMobile = ({ setMenuExtension }) => {
     return list.map((item) => {
       const label = textRegexRouter(item)
       return (
-        <NoStyleLinkRouter to={`/${label}`} key={item}>
-          <MenuItem
-            onClick={() => dispatch(switchMenuModal())}
-            onMouseEnter={() => setMenuExtension(menuOptions[item] ?? [])}
-          >
-            {item}
-          </MenuItem>
-        </NoStyleLinkRouter>
+        <MenuItem key={label}>
+          <NoStyleLinkRouter to={`/${label}`} key={item}>
+            <MenuItemSpan onClick={() => dispatch(switchMenuModal())}>
+              {item}
+            </MenuItemSpan>
+          </NoStyleLinkRouter>
+          {JSON.stringify(menuOptions[item]) !== "[]" && (
+            <SubMenuItemIcon
+              onClick={() => setMenuExtension(menuOptions[item] ?? [])}
+            />
+          )}
+        </MenuItem>
       )
     })
   }
 
   return <ListMenu>{menuListItems(listKeys)}</ListMenu>
 }
+
+const SubMenuItemIcon = styled(AiFillCaretRight)`
+  cursor: pointer;
+  :hover {
+    color: #fc6133;
+  }
+`
+
+const MenuItemSpan = styled.label`
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: black;
+
+  cursor: pointer;
+
+  :hover {
+    color: #fc6133;
+
+    text-decoration-line: underline;
+  }
+`
 
 const ListMenu = styled.ul`
   list-style-type: none;
@@ -101,29 +128,13 @@ const ListMenu = styled.ul`
   margin: 0;
   padding: 1em;
   gap: 2rem;
-  overflow: hidden;
+  overflow: auto;
 `
 
 const MenuItem = styled.li`
   display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
 
-  font-size: 1em;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  color: black;
-
-  color: black;
   text-decoration-line: none;
-
-  cursor: pointer;
-
-  :hover {
-    color: #fc6133;
-    transition: color 250ms;
-
-    text-decoration-line: underline;
-    transition: text-decoration-line 250ms;
-  }
 `
