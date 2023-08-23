@@ -1,9 +1,16 @@
 import styled from "styled-components"
 
-export const Options = ({ options, productOptions, setProductOptions }) => {
+export const Options = ({
+  options,
+  refOptionsContainer,
+  productOptions,
+  setProductOptions,
+  optionsNotSelected,
+  setOptionsNotSelected,
+}) => {
   const optionsKeys = Object.keys(options ?? {})
   return (
-    <OptionsContainer>
+    <OptionsContainer $error={optionsNotSelected} ref={refOptionsContainer}>
       {optionsKeys.map((option) => {
         return (
           <OptionsWrapper key={option}>
@@ -14,11 +21,12 @@ export const Options = ({ options, productOptions, setProductOptions }) => {
                   type="button"
                   key={label}
                   active={productOptions?.[option] === label}
-                  onClick={() =>
+                  onClick={() => {
+                    setOptionsNotSelected(false)
                     setProductOptions((value) => {
                       return { ...value, [option]: label }
                     })
-                  }
+                  }}
                 >
                   {label}
                 </OptionButton>
@@ -31,7 +39,7 @@ export const Options = ({ options, productOptions, setProductOptions }) => {
   )
 }
 const OptionsContainer = styled.div`
-  border: 1px solid #ccc;
+  border: 1px solid ${(props) => (props.$error ? "#ff2626" : "#ccc")};
   border-radius: 2px;
 
   max-width: 100%;

@@ -2,7 +2,11 @@ import { useState } from "react"
 import styled from "styled-components"
 import { BsCartPlus } from "react-icons/bs"
 
-export const BuyButton = ({ buttonActive, setProductOptions }) => {
+export const BuyButton = ({
+  buttonActive,
+  setProductOptions,
+  handleClickSelect,
+}) => {
   const [quantity, setQuantity] = useState(1)
 
   const clickQuatityButton = (changeValue) => {
@@ -43,7 +47,11 @@ export const BuyButton = ({ buttonActive, setProductOptions }) => {
           +
         </QuantityButton>
       </QuantityWrapper>
-      <AddCardButton active={buttonActive} type="submit">
+      <AddCardButton
+        active={buttonActive}
+        type="submit"
+        onClick={handleClickSelect}
+      >
         {buttonActive ? (
           <>
             <CartIcon /> adicionar

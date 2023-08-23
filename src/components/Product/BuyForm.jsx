@@ -5,10 +5,13 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addProductToCart } from "../../store/cartSlice"
 import { switchCartModal } from "../../store/modalSlice"
+import { useRef } from "react"
 
 export const BuyForm = ({ product }) => {
   const dispatch = useDispatch()
+  const refOptionsContainer = useRef(null)
   const [productOptions, setProductOptions] = useState({ quantity: 1 })
+  const [optionsNotSelected, setOptionsNotSelected] = useState(false)
 
   function handleSubmit(event) {
     event.preventDefault()
@@ -29,7 +32,17 @@ export const BuyForm = ({ product }) => {
     }
   }
 
-  function buttonActive() {
+  const handleClickSelect = () => {
+    if (!buttonActive()) {
+      refOptionsContainer.current?.scrollIntoView({
+        block: "center",
+        behavior: "smooth",
+      })
+      setOptionsNotSelected(true)
+    }
+  }
+
+  const buttonActive = () => {
     let options = Object.keys(product.options ?? {})
     options.push("quantity")
 
@@ -46,12 +59,16 @@ export const BuyForm = ({ product }) => {
     <Form onSubmit={handleSubmit}>
       <Options
         options={product.options}
+        refOptionsContainer={refOptionsContainer}
+        optionsNotSelected={optionsNotSelected}
+        setOptionsNotSelected={setOptionsNotSelected}
         productOptions={productOptions}
         setProductOptions={setProductOptions}
       />
       <BuyButton
         buttonActive={buttonActive()}
         setProductOptions={setProductOptions}
+        handleClickSelect={handleClickSelect}
       />
     </Form>
   )
