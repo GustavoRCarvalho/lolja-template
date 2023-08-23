@@ -3,13 +3,15 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 import { AiOutlineUser } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { switchCartModal } from "../../store/modalSlice"
+import { useNavigate } from "react-router-dom"
 
 export const UserCart = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   return (
     <ContainterUserCart>
-      <IconUser />
+      <IconUser onClick={() => navigate("/accounts")} />
       <IconCart
         onClick={() => {
           dispatch(switchCartModal())
