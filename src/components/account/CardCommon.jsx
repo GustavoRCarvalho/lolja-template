@@ -1,27 +1,47 @@
 import styled from "styled-components"
 
-export const CardInput = ({ title, width = "auto" }) => {
+export const CardInput = ({
+  value = "",
+  setForm = () => {},
+  name,
+  type,
+  error,
+  title,
+  width = "auto",
+}) => {
   return (
-    <CardInputComponent width={width}>
+    <CardInputComponent width={width} $error={error}>
       <CardInputTitle>{title}</CardInputTitle>
-      <Input width={width} />
+      <Input
+        type={type}
+        value={value}
+        onChange={(e) =>
+          setForm((value) => {
+            return {
+              ...value,
+              [name]: { value: e.target.value },
+            }
+          })
+        }
+      />
     </CardInputComponent>
   )
 }
 
 const CardInputComponent = styled.div`
   background-color: white;
+  background-attachment: fixed;
 
   display: flex;
   flex-direction: column;
   align-items: start;
 
   width: ${(props) => props.width};
-  max-width: 70%;
   padding: 0.2em 0.5em;
-  margin: 0.5em;
+  margin-block: 0.5em;
 
   border-radius: 0.3em;
+  border: 1px solid ${(props) => (props.$error ? "#ff2222" : "white")};
 `
 
 const CardInputTitle = styled.label``
@@ -29,7 +49,7 @@ const CardInputTitle = styled.label``
 const Input = styled.input`
   background-color: #0000;
 
-  width: ${(props) => props.width};
+  width: 100%;
 
   border: none;
   outline: none;
@@ -42,19 +62,25 @@ export const CardContainer = styled.form`
   flex-direction: column;
   align-items: center;
 
-  padding-inline: 1em;
+  padding-inline: 10%;
   padding-block: 2em;
 
   border-radius: 1em;
 
   text-align: center;
   @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
-    padding-block: 0;
+    padding-block: 1em;
   }
 `
 
 export const CardTitle = styled.h2`
   font-size: 1.5em;
+`
+
+export const CreateAccountInputsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `
 
 export const CardButton = styled.button`
