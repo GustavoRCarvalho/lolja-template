@@ -10,34 +10,47 @@ export const Options = ({
 }) => {
   const optionsKeys = Object.keys(options ?? {})
   return (
-    <OptionsContainer $error={optionsNotSelected} ref={refOptionsContainer}>
-      {optionsKeys.map((option) => {
-        return (
-          <OptionsWrapper key={option}>
-            <OptionsTitle>{option}</OptionsTitle>
-            <div>
-              {options[option].map((label) => (
-                <OptionButton
-                  type="button"
-                  key={label}
-                  active={productOptions?.[option] === label}
-                  onClick={() => {
-                    setOptionsNotSelected(false)
-                    setProductOptions((value) => {
-                      return { ...value, [option]: label }
-                    })
-                  }}
-                >
-                  {label}
-                </OptionButton>
-              ))}
-            </div>
-          </OptionsWrapper>
-        )
-      })}
-    </OptionsContainer>
+    <>
+      <OptionsContainer $error={optionsNotSelected} ref={refOptionsContainer}>
+        {optionsKeys.map((option) => {
+          return (
+            <OptionsWrapper key={option}>
+              <OptionsTitle>{option}</OptionsTitle>
+              <div>
+                {options[option].map((label) => (
+                  <OptionButton
+                    type="button"
+                    key={label}
+                    active={productOptions?.[option] === label}
+                    onClick={() => {
+                      setOptionsNotSelected(false)
+                      setProductOptions((value) => {
+                        return { ...value, [option]: label }
+                      })
+                    }}
+                  >
+                    {label}
+                  </OptionButton>
+                ))}
+              </div>
+            </OptionsWrapper>
+          )
+        })}
+      </OptionsContainer>
+      {optionsNotSelected && (
+        <OptionsNotSelectedSpan>
+          Selecione as opções desejadas
+        </OptionsNotSelectedSpan>
+      )}
+    </>
   )
 }
+
+const OptionsNotSelectedSpan = styled.span`
+  font-size: 0.9em;
+  color: #ff2626;
+`
+
 const OptionsContainer = styled.div`
   border: 1px solid ${(props) => (props.$error ? "#ff2626" : "#ccc")};
   border-radius: 2px;
