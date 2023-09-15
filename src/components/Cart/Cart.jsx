@@ -4,8 +4,12 @@ import { CartItem } from "./CartItem"
 import { CloseModalButton } from "../common/CloseModalButton"
 import { switchCartModal } from "../../store/modalSlice"
 import { CartFinal } from "./CartFinal"
+import { useCookies } from "react-cookie"
+import { useEffect } from "react"
+import { setInitialCart } from "../../store/cartSlice"
 
 export const Cart = () => {
+  const [cookies, setCookies] = useCookies("cart")
   const dispatch = useDispatch()
   const { listCart } = useSelector((state) => state.cart)
 
@@ -21,6 +25,20 @@ export const Cart = () => {
       return `${totalQuantity} itens`
     }
   }
+
+  useEffect(() => {
+    let cartData = []
+    if (JSON.stringify(listCart) === "[]") {
+      cartData = cookies.cart ?? []
+    } else {
+      cartData = listCart
+    }
+    dispatch(setInitialCart(cartData))
+  }, [])
+
+  useEffect(() => {
+    setCookies("cart", listCart)
+  }, [listCart, setCookies])
 
   return (
     <Modal>

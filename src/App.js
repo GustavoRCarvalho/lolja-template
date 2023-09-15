@@ -7,18 +7,21 @@ import { theme } from "./theme/theme"
 import { Provider } from "react-redux"
 import store from "./store/store"
 import Modals from "./router/Modals"
+import { CookiesProvider } from "react-cookie"
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <Header />
-          <Content />
-          <FooterPage />
-          <Modals />
-        </BrowserRouter>
-      </Provider>
+      <CookiesProvider>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Header />
+            <Content />
+            <FooterPage />
+            <Modals />
+          </BrowserRouter>
+        </Provider>
+      </CookiesProvider>
     </ThemeProvider>
   )
 }

@@ -19,6 +19,9 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
+    setInitialCart: (state, { payload }) => {
+      state.listCart = payload
+    },
     addProductToCart: (state, { payload }) => {
       const index = FindIndex(state, payload)
 
@@ -59,5 +62,6 @@ export const {
   addProductToCart,
   removeProductFromCart,
   updateCartProductQuantity,
+  setInitialCart,
 } = cartSlice.actions
 export default cartSlice.reducer
