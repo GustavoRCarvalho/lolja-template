@@ -7,11 +7,19 @@ import { CartFinal } from "./CartFinal"
 import { useCookies } from "react-cookie"
 import { useEffect } from "react"
 import { setInitialCart } from "../../store/cartSlice"
+import { useMemo } from "react"
 
 export const Cart = () => {
   const [cookies, setCookies] = useCookies("cart")
   const dispatch = useDispatch()
   const { listCart } = useSelector((state) => state.cart)
+  const cartData = useMemo(() => {
+    if (JSON.stringify(listCart) === "[]") {
+      return cookies.cart ?? []
+    } else {
+      return listCart
+    }
+  }, [cookies.cart, listCart])
 
   function quantityCartItems(list) {
     let totalQuantity = 0
@@ -27,14 +35,8 @@ export const Cart = () => {
   }
 
   useEffect(() => {
-    let cartData = []
-    if (JSON.stringify(listCart) === "[]") {
-      cartData = cookies.cart ?? []
-    } else {
-      cartData = listCart
-    }
     dispatch(setInitialCart(cartData))
-  }, [])
+  }, [dispatch, cartData])
 
   useEffect(() => {
     setCookies("cart", listCart)
