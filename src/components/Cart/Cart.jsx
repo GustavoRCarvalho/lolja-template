@@ -35,8 +35,14 @@ export const Cart = () => {
   }
 
   useEffect(() => {
-    dispatch(setInitialCart(cartData))
-  }, [dispatch, cartData])
+    console.log()
+
+    if (JSON.stringify(cookies.cart) !== "undefined") {
+      dispatch(setInitialCart(cartData))
+    } else {
+      setCookies("cart", [])
+    }
+  }, [cookies.cart, dispatch, cartData, setCookies])
 
   useEffect(() => {
     setCookies("cart", listCart)
