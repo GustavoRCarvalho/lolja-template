@@ -19,7 +19,8 @@ export const Cart = () => {
     } else {
       return listCart
     }
-  }, [cookies.cart, listCart])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cookies.cart])
 
   function quantityCartItems(list) {
     let totalQuantity = 0
@@ -35,9 +36,7 @@ export const Cart = () => {
   }
 
   useEffect(() => {
-    console.log()
-
-    if (JSON.stringify(cookies.cart) !== "undefined") {
+    if (cookies.cart !== undefined) {
       dispatch(setInitialCart(cartData))
     } else {
       setCookies("cart", [])
