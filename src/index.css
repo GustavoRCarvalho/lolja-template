@@ -1,4 +1,6 @@
 body {
+  --bg-white: rgb(255, 255, 255);
+
   margin: 0;
   font-family: "Dosis";
   font-size: 1rem;
@@ -18,4 +20,11 @@ button {
 @font-face {
   font-family: "Dosis";
   src: url(./assets/fonts/Dosis-Regular.ttf);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
