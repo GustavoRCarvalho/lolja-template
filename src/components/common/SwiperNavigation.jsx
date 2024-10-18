@@ -5,17 +5,26 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { useRef } from "react"
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa"
+import { useCallback } from "react"
 
 export const SwiperNavigation = ({ children, slidesPerView = "auto" }) => {
-  const navigationPrevRef = useRef(null)
-  const navigationNextRef = useRef(null)
+  const sliderRef = useRef(null)
+
+  const handlePrev = useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slidePrev()
+  }, [])
+
+  const handleNext = useCallback(() => {
+    if (!sliderRef.current) return
+    sliderRef.current.swiper.slideNext()
+  }, [])
 
   return (
     <SwiperWrapper>
       <SwiperComponent
+        ref={sliderRef}
         onInit={(swiper) => {
-          swiper.params.navigation.prevEl = navigationPrevRef.current
-          swiper.params.navigation.nextEl = navigationNextRef.current
           swiper.navigation.init()
           swiper.navigation.update()
         }}
@@ -28,10 +37,10 @@ export const SwiperNavigation = ({ children, slidesPerView = "auto" }) => {
       >
         {children}
       </SwiperComponent>
-      <SwiperButton title="navPrev" left={0} ref={navigationPrevRef}>
+      <SwiperButton title="navPrev" left={0} onClick={handlePrev}>
         <LeftIcon />
       </SwiperButton>
-      <SwiperButton title="navNext" right={0} ref={navigationNextRef}>
+      <SwiperButton title="navNext" right={0} onClick={handleNext}>
         <RightIcon />
       </SwiperButton>
     </SwiperWrapper>
