@@ -30,7 +30,7 @@ export const Product = () => {
       window.scroll(0, 0)
       setProductData(product({ title: title }))
       setLoading(false)
-    }, 1500)
+    }, 250)
   }, [title])
 
   return (

@@ -26,7 +26,7 @@ export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
         })
       )
       setLoading(false)
-    }, 1500)
+    }, 250)
 
     return () => {
       clearInterval(interval)
