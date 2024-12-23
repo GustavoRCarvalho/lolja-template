@@ -7,19 +7,37 @@ Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.
 
 ## Tecnologias Utilizadas
 
-### Base: 
+### Base:
 
 [React](https://github.com/facebook/react) <br />
+[Vite](https://github.com/vitejs/vite) <br />
+[Preact](https://github.com/preactjs/preact) <br />
 
 ### Estilos:
 
 [styled-components](https://github.com/styled-components/styled-components) <br />
 [react-icons](https://github.com/react-icons/react-icons) <br />
+[swiper](https://github.com/nolimits4web/Swiper) <br />
+[react-loader-spinner](https://www.npmjs.com/package/react-loader-spinner) <br />
+[react-range-slider-input](https://github.com/n3r4zzurr0/react-range-slider-input) <br />
+[react-responsive-carousel](https://github.com/leandrowd/react-responsive-carousel) <br />
 
 ### Gerenciamento:
 
-[react redux](https://github.com/reduxjs/redux-toolkit) <br />
-[react router dom](https://github.com/remix-run/react-router) <br />
+[react-redux](https://github.com/reduxjs/redux-toolkit) <br />
+[react-cookie](https://github.com/reduxjs/redux-toolkit) <br />
+[react-router-dom](https://github.com/remix-run/react-router) <br />
+
+### Eslint + Prettier:
+
+[eslint](https://github.com/eslint/eslint) <br />
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) <br />
+
+#### React:
+
+[eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) <br />
+[eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks) <br />
+[eslint-plugin-react-refresh](https://github.com/ArnaudBarre/eslint-plugin-react-refresh) <br />
 
 ## Funcionalidades Principais
 
@@ -32,9 +50,9 @@ Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.
 ## Como Iniciar o Projeto
 
 1. Clone este repositório: `git clone https://github.com/GustavoRCarvalho/lolja-template`
-2. Instale as dependências: `npm install`
-3. Inicie o servidor de desenvolvimento: `npm start`
-4. Acesse o aplicativo em seu navegador: `http://localhost:3000`
+2. Instale as dependências: `npm install ou pnpm install`
+3. Inicie o servidor de desenvolvimento: `npm run dev`
+4. Acesse o aplicativo em seu navegador: `http://localhost:5173`
 
 ## Contribuições
 
