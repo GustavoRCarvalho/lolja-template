@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { ProductImage } from "./ProductImage"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
 import { moneyFormat } from "../common/MoneyFormat"
-import { useLocation } from "react-router"
+import { useLocation } from "react-router-dom"
 
 export const ProductCard = ({ product }) => {
   const { pathname } = useLocation()
