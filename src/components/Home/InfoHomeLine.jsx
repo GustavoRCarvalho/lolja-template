@@ -9,15 +9,15 @@ export const InfoHomeLine = () => {
     <InfoBackground>
       <InfoContainer>
         <InfoItem>
-          <IconCard />
+          <AiFillCreditCard />
           PARCELAMENTO EM ATÉ 6X SEM JUROS
         </InfoItem>
         <InfoItem>
-          <IconTruck />
+          <FaTruckFast />
           ENTREGA PARA TODO O BRASIL
         </InfoItem>
         <InfoItem>
-          <IconYoutube />
+          <AiFillYoutube />
           LOJA OFICIAL DO YOUTUBE
         </InfoItem>
       </InfoContainer>
@@ -47,20 +47,10 @@ const InfoItem = styled.div`
   font-weight: 600;
   letter-spacing: 0.15em;
   margin-inline: 1rem;
-`
 
-const IconCard = styled(AiFillCreditCard)`
-  height: 1.5rem;
-  width: 1.5rem;
-  padding-right: 1.5rem;
-`
-const IconYoutube = styled(AiFillYoutube)`
-  height: 1.5rem;
-  width: 1.5rem;
-  padding-right: 1.5rem;
-`
-const IconTruck = styled(FaTruckFast)`
-  height: 1.5rem;
-  width: 1.5rem;
-  padding-right: 1.5rem;
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding-right: 1.5rem;
+  }
 `

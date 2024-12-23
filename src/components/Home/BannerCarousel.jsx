@@ -6,10 +6,8 @@ import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner2.png"
 import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner3.png"
 
 export const BannnerCarousel = () => {
-  const CarouselImages = () => {
-    const List = [Banner1, Banner2, Banner3]
-    return List
-  }
+  const CarouselImages = [Banner1, Banner2, Banner3]
+
   return (
     <CarouselContainer
       autoPlay
@@ -19,7 +17,7 @@ export const BannnerCarousel = () => {
       interval={4000}
       transitionTime={1000}
     >
-      {CarouselImages().map((src, index) => {
+      {CarouselImages.map((src, index) => {
         return <Image alt={"Banner"} key={index} src={src} />
       })}
     </CarouselContainer>
@@ -29,6 +27,7 @@ export const BannnerCarousel = () => {
 const CarouselContainer = styled(Carousel)`
   max-width: 100vw;
   padding: 0;
+  user-select: none;
 `
 
 const Image = styled.img``
