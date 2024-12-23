@@ -71,103 +71,47 @@ export const listProducts = {
 }
 
 export const staticCatalogData = ({ name = "" }) => {
-  if (
-    name === "calango" ||
-    name === "gabi" ||
-    name === "luba" ||
-    name === "castro" ||
-    name === "nostalgia" ||
-    name === "felps" ||
-    name === "orichinho" ||
-    name === "matt" ||
-    name === "inutilismo"
-  ) {
-    return {
-      about: "",
-      totalPages: 5,
-      filters: {
-        categoria: [
-          "camisetas",
-          "moletons",
-          "manga longa",
-          "regata",
-          "blusão",
-          "blusão cinza",
-          "raglan",
-        ],
-        cor: [
-          "preto",
-          "cinza",
-          "branco",
-          "marrom",
-          "chumbo",
-          "canela",
-          "preto com branco",
-          "preto com vermelho",
-        ],
-        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
-        sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
-        preço: [39.9, 159.9],
-        ordernar: [
-          "MAIS RECENTES",
-          "MAIS ANTIGOS",
-          "MENOR PREÇO",
-          "MAIOR PREÇO",
-        ],
-      },
-    }
-  } else {
-    return {
-      about:
-        "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark.",
-      totalPages: 5,
-      filters: {
-        categoria: [
-          "camisetas",
-          "moletons",
-          "manga longa",
-          "regata",
-          "blusão",
-          "blusão cinza",
-          "raglan",
-        ],
-        cor: [
-          "preto",
-          "cinza",
-          "branco",
-          "marrom",
-          "chumbo",
-          "canela",
-          "preto com branco",
-          "preto com vermelho",
-        ],
-        tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
-        sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
-        preço: [39.9, 159.9],
-        ordernar: [
-          "MAIS RECENTES",
-          "MAIS ANTIGOS",
-          "MENOR PREÇO",
-          "MAIOR PREÇO",
-        ],
-      },
-    }
-  }
-}
-export const listCatalog = ({ name = "", quantity = 20 }) => {
-  if (
-    name === "calango" ||
-    name === "gabi" ||
-    name === "luba" ||
-    name === "castro" ||
-    name === "nostalgia" ||
-    name === "felps" ||
-    name === "orichinho" ||
-    name === "matt" ||
-    name === "inutilismo"
-  ) {
-    return createList(quantity)
-  } else {
-    return createList(quantity)
+  const about = [
+    "calango",
+    "gabi",
+    "luba",
+    "castro",
+    "nostalgia",
+    "felps",
+    "orichinho",
+    "matt",
+    "inutilismo",
+  ].includes(name)
+    ? "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark."
+    : ""
+
+  return {
+    about: about,
+    totalPages: 5,
+    filters: {
+      categoria: [
+        "camisetas",
+        "moletons",
+        "manga longa",
+        "regata",
+        "blusão",
+        "blusão cinza",
+        "raglan",
+      ],
+      cor: [
+        "preto",
+        "cinza",
+        "branco",
+        "marrom",
+        "chumbo",
+        "canela",
+        "preto com branco",
+        "preto com vermelho",
+      ],
+      tamanho: ["5 - 7 ANOS", "PPP", "PP", "P", "M", "G", "2G", "3G", "4G"],
+      sexo: ["UNISSEX", "MASCULINO", "FEMININO"],
+      preço: [39.9, 159.9],
+      ordernar: ["MAIS RECENTES", "MAIS ANTIGOS", "MENOR PREÇO", "MAIOR PREÇO"],
+    },
   }
 }

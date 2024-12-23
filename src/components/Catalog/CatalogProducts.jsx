@@ -4,7 +4,7 @@ import { Pagination } from "./Pagination"
 import { useEffect } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useState } from "react"
-import { listCatalog } from "../../assets/images/FakeAPIImages/Catalog"
+import { createList } from "../../assets/images/FakeAPIImages/Catalog"
 import { useSelector } from "react-redux"
 import { FilterMobileButton } from "./FilterMobileButton"
 
@@ -17,14 +17,7 @@ export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
   useEffect(() => {
     setLoading(true)
     const interval = setTimeout(() => {
-      setCatalog(
-        listCatalog({
-          name: pathLabel,
-          quantity: 18,
-          actualPage: actualPage,
-          filters: filters,
-        })
-      )
+      setCatalog(createList(18))
       setLoading(false)
     }, 250)
 
