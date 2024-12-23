@@ -10,6 +10,7 @@ export const BannnerCarousel = () => {
 
   return (
     <CarouselContainer
+      emulateTouch={true}
       autoPlay
       infiniteLoop
       showThumbs={false}
