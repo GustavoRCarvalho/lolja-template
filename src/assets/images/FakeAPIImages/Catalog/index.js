@@ -1,11 +1,15 @@
-import MOLETOMOVERSIZEDOFF1 from "./MOLETOMOVERSIZEDOFF1.png"
-import MOLETOMOVERSIZEDOFF2 from "./MOLETOMOVERSIZEDOFF2.png"
-import MOLETOMPOLVO1 from "./MOLETOMPOLVO1.png"
-import MOLETOMPOLVO2 from "./MOLETOMPOLVO2.png"
-import MANGALONGACARINAEYES1 from "./MANGALONGACARINAEYES1.png"
-import MANGALONGACARINAEYES2 from "./MANGALONGACARINAEYES2.png"
-import MOLETOMPESADELO1 from "./MOLETOMPESADELO1.png"
-import MOLETOMPESADELO2 from "./MOLETOMPESADELO2.png"
+import MOLETOMOVERSIZEDOFF1 from "../Product/MOLETOMOVERSIZEDOFF1.png"
+import MOLETOMOVERSIZEDOFF2 from "../Product/MOLETOMOVERSIZEDOFF2.png"
+import MOLETOMPOLVO1 from "../Product/MOLETOMPOLVO1.png"
+import MOLETOMPOLVO2 from "../Product/MOLETOMPOLVO2.png"
+import MANGALONGACARINAEYES1 from "../Product/MANGALONGACARINAEYES1.png"
+import MANGALONGACARINAEYES2 from "../Product/MANGALONGACARINAEYES2.png"
+import MOLETOMPESADELO1 from "../Product/MOLETOMPESADELO1.png"
+import MOLETOMPESADELO2 from "../Product/MOLETOMPESADELO2.png"
+import MOLETOMPRETOORIENTALDEATH1 from "../Product/MOLETOMPRETOORIENTALDEATH1.png"
+import MOLETOMPRETOORIENTALDEATH2 from "../Product/MOLETOMPRETOORIENTALDEATH2.png"
+import CAMISETAOVERSIZEDPRETAODIN1 from "../Product/CAMISETAOVERSIZEDPRETAODIN1.png"
+import CAMISETAOVERSIZEDPRETAODIN2 from "../Product/CAMISETAOVERSIZEDPRETAODIN2.png"
 
 const productsObjects = {
   obj1: {
@@ -44,19 +48,41 @@ const productsObjects = {
     installmentsPrice: ["6", 33.32],
     tamanhos: ["P", "M", "G", "2G"],
   },
+  obj5: {
+    images: [MOLETOMPRETOORIENTALDEATH1, MOLETOMPRETOORIENTALDEATH2],
+    title: "MOLETOM PRETO - ORIENTAL DEATH",
+    price: 239.9,
+    salePrice: 179.9,
+    salePorcent: `-${Math.round(100 - (179.9 * 100) / 239.9)}%`,
+    installmentsPrice: ["6", 33.32],
+    tamanhos: ["PP", "P", "M", "G", "2G"],
+  },
+  obj6: {
+    images: [CAMISETAOVERSIZEDPRETAODIN1, CAMISETAOVERSIZEDPRETAODIN2],
+    title: "CAMISETA OVERSIZED PRETA - ODIN",
+    price: 239.9,
+    salePrice: 179.9,
+    salePorcent: `-${Math.round(100 - (179.9 * 100) / 239.9)}%`,
+    installmentsPrice: ["6", 33.32],
+    tamanhos: ["M", "G", "2G", "4G"],
+  },
 }
 
 export function createList(quantity) {
   let array = Array.apply(null, Array(quantity)).map(() => {
-    const number = Math.floor(Math.random() * 4)
+    const number = Math.floor(Math.random() * 6)
     if (number === 0) {
       return productsObjects.obj1
     } else if (number === 1) {
       return productsObjects.obj2
     } else if (number === 2) {
       return productsObjects.obj3
-    } else {
+    } else if (number === 3) {
       return productsObjects.obj4
+    } else if (number === 4) {
+      return productsObjects.obj5
+    } else {
+      return productsObjects.obj6
     }
   })
 

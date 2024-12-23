@@ -2,6 +2,11 @@ import MOLETOMOVERSIZEDOFF1 from "./MOLETOMOVERSIZEDOFF1.png"
 import MOLETOMOVERSIZEDOFF2 from "./MOLETOMOVERSIZEDOFF2.png"
 import MOLETOMOVERSIZEDOFF3 from "./MOLETOMOVERSIZEDOFF3.png"
 
+import MOLETOMPRETOORIENTALDEATH1 from "./MOLETOMPRETOORIENTALDEATH1.png"
+import MOLETOMPRETOORIENTALDEATH2 from "./MOLETOMPRETOORIENTALDEATH2.png"
+import MOLETOMPRETOORIENTALDEATH3 from "./MOLETOMPRETOORIENTALDEATH3.png"
+import MOLETOMPRETOORIENTALDEATH4 from "./MOLETOMPRETOORIENTALDEATH4.png"
+
 import MOLETOMPOLVO1 from "./MOLETOMPOLVO1.png"
 import MOLETOMPOLVO2 from "./MOLETOMPOLVO2.png"
 import MOLETOMPOLVO3 from "./MOLETOMPOLVO3.png"
@@ -23,8 +28,53 @@ import MOLETOMPESADELO4 from "./MOLETOMPESADELO4.png"
 import MOLETOMPESADELO5 from "./MOLETOMPESADELO5.png"
 import MOLETOMPESADELO6 from "./MOLETOMPESADELO6.png"
 
+import CAMISETAOVERSIZEDPRETAODIN1 from "./CAMISETAOVERSIZEDPRETAODIN1.png"
+import CAMISETAOVERSIZEDPRETAODIN2 from "./CAMISETAOVERSIZEDPRETAODIN2.png"
+import CAMISETAOVERSIZEDPRETAODIN3 from "./CAMISETAOVERSIZEDPRETAODIN3.png"
+import CAMISETAOVERSIZEDPRETAODIN4 from "./CAMISETAOVERSIZEDPRETAODIN4.png"
+import CAMISETAOVERSIZEDPRETAODIN5 from "./CAMISETAOVERSIZEDPRETAODIN5.png"
+
 export const product = ({ title }) => {
   switch (title) {
+    case "CAMISETA OVERSIZED PRETA - ODIN":
+      return {
+        images: [
+          CAMISETAOVERSIZEDPRETAODIN1,
+          CAMISETAOVERSIZEDPRETAODIN2,
+          CAMISETAOVERSIZEDPRETAODIN3,
+          CAMISETAOVERSIZEDPRETAODIN4,
+          CAMISETAOVERSIZEDPRETAODIN5,
+        ],
+        title: "CAMISETA OVERSIZED PRETA - ODIN",
+        price: 199.9,
+        salePrice: 159.9,
+        salePorcent: `-${Math.round(100 - (159.9 * 100) / 199.9)}%`,
+        installmentsPrice: ["6", 26.65],
+        options: {
+          tamanhos: ["M", "G", "2G", "4G"],
+          sexo: ["FEMININO", "MASCULINO"],
+        },
+        about: `Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano`,
+      }
+    case "MOLETOM PRETO - ORIENTAL DEATH":
+      return {
+        images: [
+          MOLETOMPRETOORIENTALDEATH1,
+          MOLETOMPRETOORIENTALDEATH2,
+          MOLETOMPRETOORIENTALDEATH3,
+          MOLETOMPRETOORIENTALDEATH4,
+        ],
+        title: "MOLETOM PRETO - ORIENTAL DEATH",
+        price: 199.9,
+        salePrice: 159.9,
+        salePorcent: `-${Math.round(100 - (159.9 * 100) / 199.9)}%`,
+        installmentsPrice: ["6", 26.65],
+        options: {
+          tamanhos: ["PP", "P", "M", "G", "2G"],
+          sexo: ["FEMININO", "MASCULINO"],
+        },
+        about: `Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano`,
+      }
     case "MOLETOM - POLVO":
       return {
         images: [
