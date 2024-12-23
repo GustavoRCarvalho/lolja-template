@@ -16,12 +16,11 @@ import { useEffect, useState } from "react"
 
 export const Product = () => {
   const { pathname } = useLocation()
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [productData, setProductData] = useState({})
   const pathArray = pathname.replace("/", "").split("/")
   const pathLabel = decodeURI(pathArray[0])
   const title = decodeURI(pathArray[1])
-  const productDataFinish = JSON.stringify(productData) !== "{}"
 
   useEffect(() => {
     setProductData({})
@@ -35,15 +34,16 @@ export const Product = () => {
 
   return (
     <>
-      <Loading visible={loading}>
-        <ColorRing
-          height="60"
-          width="60"
-          ariaLabel="blocks-loading"
-          colors={["#ff0516", "#ffe600", "#00ff22", "#00a2ff", "#b700ff"]}
-        />
-      </Loading>
-      {productDataFinish && (
+      {loading ? (
+        <Loading>
+          <ColorRing
+            height="60"
+            width="60"
+            ariaLabel="blocks-loading"
+            colors={["#ff0516", "#ffe600", "#00ff22", "#00a2ff", "#b700ff"]}
+          />
+        </Loading>
+      ) : (
         <>
           <ProductContainer>
             <CarouselProduct
@@ -111,6 +111,5 @@ const TitleProduct = styled.h1`
 `
 
 const Loading = styled.div`
-  display: ${(props) => (props.visible ? "" : "none")};
   height: 50vh;
 `
