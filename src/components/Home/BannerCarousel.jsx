@@ -1,12 +1,12 @@
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import styled from "styled-components"
-import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner1.png"
-import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner2.png"
-import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner3.png"
+import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner4.webp"
+import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner5.webp"
+import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner6.webp"
 
 export const BannnerCarousel = () => {
-  const CarouselImages = [Banner1, Banner2, Banner3]
+  const CarouselImages = [Banner3, Banner1, Banner2]
 
   return (
     <CarouselContainer
@@ -30,4 +30,7 @@ const CarouselContainer = styled(Carousel)`
   user-select: none;
 `
 
-const Image = styled.img``
+const Image = styled.img`
+  max-height: 80dvh;
+  object-fit: cover;
+`
