@@ -34,8 +34,60 @@ import CAMISETAOVERSIZEDPRETAODIN3 from "./CAMISETAOVERSIZEDPRETAODIN3.png"
 import CAMISETAOVERSIZEDPRETAODIN4 from "./CAMISETAOVERSIZEDPRETAODIN4.png"
 import CAMISETAOVERSIZEDPRETAODIN5 from "./CAMISETAOVERSIZEDPRETAODIN5.png"
 
+import MOLETOMPRETOGATITO1 from "./MOLETOMPRETOGATITO1.png"
+import MOLETOMPRETOGATITO2 from "./MOLETOMPRETOGATITO2.png"
+import MOLETOMPRETOGATITO3 from "./MOLETOMPRETOGATITO3.png"
+import MOLETOMPRETOGATITO4 from "./MOLETOMPRETOGATITO4.png"
+import MOLETOMPRETOGATITO5 from "./MOLETOMPRETOGATITO5.png"
+
+import MOLETOMBASICOFULLPRINTHELLOKITTYROCKER1 from "./MOLETOMBASICOFULLPRINTHELLOKITTYROCKER1.png"
+import MOLETOMBASICOFULLPRINTHELLOKITTYROCKER2 from "./MOLETOMBASICOFULLPRINTHELLOKITTYROCKER2.png"
+import MOLETOMBASICOFULLPRINTHELLOKITTYROCKER3 from "./MOLETOMBASICOFULLPRINTHELLOKITTYROCKER3.png"
+import MOLETOMBASICOFULLPRINTHELLOKITTYROCKER4 from "./MOLETOMBASICOFULLPRINTHELLOKITTYROCKER4.png"
+import MOLETOMBASICOFULLPRINTHELLOKITTYROCKER5 from "./MOLETOMBASICOFULLPRINTHELLOKITTYROCKER5.png"
+
 export const product = ({ title }) => {
   switch (title) {
+    case "MOLETOM BÁSICO FULL PRINT - HELLO KITTY ROCKER":
+      return {
+        images: [
+          MOLETOMBASICOFULLPRINTHELLOKITTYROCKER1,
+          MOLETOMBASICOFULLPRINTHELLOKITTYROCKER2,
+          MOLETOMBASICOFULLPRINTHELLOKITTYROCKER3,
+          MOLETOMBASICOFULLPRINTHELLOKITTYROCKER4,
+          MOLETOMBASICOFULLPRINTHELLOKITTYROCKER5,
+        ],
+        title: "MOLETOM BÁSICO FULL PRINT - HELLO KITTY ROCKER",
+        price: 249.9,
+        salePrice: 219.9,
+        salePorcent: `-${Math.round(100 - (219.9 * 100) / 249.9)}%`,
+        installmentsPrice: ["6", 36.65],
+        options: {
+          tamanhos: ["M", "G", "2G", "4G"],
+          sexo: ["FEMININO", "MASCULINO"],
+        },
+        about: `Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano`,
+      }
+    case "MOLETOM PRETO - GATITO":
+      return {
+        images: [
+          MOLETOMPRETOGATITO1,
+          MOLETOMPRETOGATITO2,
+          MOLETOMPRETOGATITO3,
+          MOLETOMPRETOGATITO4,
+          MOLETOMPRETOGATITO5,
+        ],
+        title: "MOLETOM PRETO - GATITO",
+        price: 199.9,
+        salePrice: 159.9,
+        salePorcent: `-${Math.round(100 - (159.9 * 100) / 199.9)}%`,
+        installmentsPrice: ["6", 26.65],
+        options: {
+          tamanhos: ["M", "G", "2G", "4G"],
+          sexo: ["FEMININO", "MASCULINO"],
+        },
+        about: `Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano`,
+      }
     case "CAMISETA OVERSIZED PRETA - ODIN":
       return {
         images: [
