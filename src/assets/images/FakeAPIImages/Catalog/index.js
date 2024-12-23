@@ -82,8 +82,8 @@ export const staticCatalogData = ({ name = "" }) => {
     "matt",
     "inutilismo",
   ].includes(name)
-    ? "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark."
-    : ""
+    ? ""
+    : "Ela pode parecer colorida e alegre à primeira vista, mas ela é a mistura da primavera cheia de cor, com a energia do misticismo mais dark."
 
   return {
     about: about,
