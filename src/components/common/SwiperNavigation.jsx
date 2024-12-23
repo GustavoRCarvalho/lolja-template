@@ -69,13 +69,13 @@ const SwiperComponent = styled(Swiper)`
     justify-content: center;
   }
   .swiper-pagination-bullet {
-    background: #fc6133;
+    background: var(--orange);
     opacity: 1;
     width: 4px;
     height: 4px;
   }
   .swiper-pagination-bullet-active {
-    background: #fc6133;
+    background: var(--orange);
     width: 10px;
     height: 10px;
   }

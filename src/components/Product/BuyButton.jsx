@@ -71,7 +71,7 @@ const OptionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -91,7 +91,7 @@ const CartIcon = styled(BsCartPlus)`
 `
 
 const AddCardButton = styled.button`
-  background-color: #00b081;
+  background-color: var(--green);
   transition: background-color 250ms;
   color: #fff;
 
@@ -112,7 +112,7 @@ const AddCardButton = styled.button`
   border: none;
 
   :hover {
-    background-color: ${(props) => (props.active ? "#eb7e01" : "#00b081")};
+    background-color: ${(props) => (props.active ? "#eb7e01" : "var(--green)")};
     transition: background-color 250ms;
   }
 `
@@ -153,7 +153,7 @@ const QuantityButton = styled.button`
   letter-spacing: 0.03em;
 
   :active {
-    background-color: #00b081;
+    background-color: var(--green);
     color: #fff;
     transition: color 0.1s, background-color 0.2s;
   }

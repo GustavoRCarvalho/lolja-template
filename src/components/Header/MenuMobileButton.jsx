@@ -19,7 +19,7 @@ const MenuIcon = styled(HiOutlineMenuAlt1)`
 
   cursor: pointer;
 
-  @media screen and (min-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `

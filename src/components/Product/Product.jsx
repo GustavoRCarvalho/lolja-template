@@ -85,7 +85,7 @@ const ProductContainer = styled(ContentContainer)`
   padding-bottom: 2rem;
   padding-top: 1.5rem;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+  @media screen and (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
   }
@@ -98,7 +98,7 @@ const InfoWrapper = styled.div`
   max-width: 30em;
 
   margin-left: 3rem;
-  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     max-width: 40em;
     margin-left: 0;

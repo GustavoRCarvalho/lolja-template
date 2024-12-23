@@ -89,7 +89,7 @@ const Modal = styled.div`
     border-radius: 10px;
   }
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `

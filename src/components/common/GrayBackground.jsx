@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const GrayBackground = styled.div`
-  background-color: ${(props) => props.theme.mediumGray};
+  background-color: var(--mediumGray);
 
   display: flex;
   justify-content: center;

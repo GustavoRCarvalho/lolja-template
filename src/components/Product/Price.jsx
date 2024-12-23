@@ -75,7 +75,7 @@ const PriceInstallment = styled.span`
 `
 
 const SalePorcent = styled.div`
-  background-color: #00b081;
+  background-color: var(--green);
   color: #fff;
   font-size: 0.8em;
 

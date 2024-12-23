@@ -62,7 +62,7 @@ const FinalLink = styled(NoStyleLinkRouter)`
 `
 
 const FinalButton = styled.button`
-  background-color: #fc6133;
+  background-color: var(--orange);
   color: #fff;
 
   display: flex;

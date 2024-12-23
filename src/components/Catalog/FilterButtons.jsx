@@ -88,7 +88,7 @@ const SliderPrice = styled(RangeSlider)`
   }
 
   .range-slider__range {
-    background: #fc6133;
+    background: var(--orange);
   }
 `
 

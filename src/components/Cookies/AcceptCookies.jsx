@@ -58,7 +58,7 @@ const SpanMore = styled.span`
 
   cursor: pointer;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     margin-top: 0.5em;
   }
 `
@@ -70,7 +70,7 @@ const SpanWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     flex-direction: column;
   }
 `

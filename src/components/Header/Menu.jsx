@@ -17,7 +17,7 @@ export const Menu = () => {
 }
 
 const Nav = styled.nav`
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `

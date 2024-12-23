@@ -123,6 +123,6 @@ const BackButton = styled.button`
   cursor: pointer;
 
   :hover {
-    color: #fc6133;
+    color: var(--orange);
   }
 `

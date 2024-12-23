@@ -56,7 +56,7 @@ const Input = styled.input`
 `
 
 export const CardContainer = styled.form`
-  background-color: ${(props) => props.theme.mediumGray};
+  background-color: var(--mediumGray);
 
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ export const CardContainer = styled.form`
   border-radius: 1em;
 
   text-align: center;
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     padding-block: 1em;
   }
 `
@@ -84,7 +84,7 @@ export const CreateAccountInputsWrapper = styled.div`
 `
 
 export const CardButton = styled.button`
-  background-color: ${(props) => props.theme.orange};
+  background-color: var(--orange);
   color: white;
 
   width: 10em;
@@ -104,10 +104,10 @@ export const CardButton = styled.button`
   transition: background-color 250ms;
 
   :hover {
-    background-color: ${(props) => props.theme.green};
+    background-color: var(--green);
   }
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     width: 50%;
   }
 `

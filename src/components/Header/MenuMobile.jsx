@@ -99,7 +99,7 @@ export const MenuMobile = ({ setMenuExtension }) => {
 const SubMenuItemIcon = styled(AiFillCaretRight)`
   cursor: pointer;
   :hover {
-    color: #fc6133;
+    color: var(--orange);
   }
 `
 
@@ -112,7 +112,7 @@ const MenuItemSpan = styled.label`
   cursor: pointer;
 
   :hover {
-    color: #fc6133;
+    color: var(--orange);
 
     text-decoration-line: underline;
   }

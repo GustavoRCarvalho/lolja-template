@@ -34,7 +34,7 @@ const CategoryDropdown = styled.div`
   cursor: pointer;
 `
 const FiltrosContainer = styled.div`
-  background-color: ${(props) => props.theme.mediumGray};
+  background-color: var(--mediumGray);
 
   width: 15em;
   border-radius: 0.4em;

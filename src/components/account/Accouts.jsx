@@ -25,7 +25,7 @@ const CardWrapper = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1em;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 

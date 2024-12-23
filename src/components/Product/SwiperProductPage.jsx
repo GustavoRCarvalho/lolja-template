@@ -29,7 +29,7 @@ export const SwiperProductPage = ({ content = [] }) => {
 const SwiperSlideComponent = styled(SwiperSlide)`
   max-width: 300px;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+  @media screen and (max-width: 1024px) {
     max-width: 160px;
   }
 `

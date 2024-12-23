@@ -115,7 +115,7 @@ const MenuItem = styled.li`
   cursor: pointer;
 
   :hover {
-    color: #fc6133;
+    color: var(--orange);
 
     text-decoration-line: underline;
   }

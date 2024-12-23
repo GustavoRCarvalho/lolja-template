@@ -57,7 +57,7 @@ const Card = styled.div`
 const SalePorcent = styled.div`
   position: absolute;
 
-  background-color: #00b081;
+  background-color: var(--green);
   color: #fff;
   font-size: 0.8em;
 

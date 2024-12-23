@@ -39,7 +39,7 @@ const FormSearch = styled.form`
   border: 1px solid #9a9a9a;
   border-radius: 0.5rem;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `

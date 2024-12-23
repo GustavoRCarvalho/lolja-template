@@ -5,6 +5,10 @@ body {
   font-family: "Dosis";
   font-size: 1rem;
   letter-spacing: 0.04em;
+
+  --mediumGray: #f2f2f2;
+  --orange: #fc6133;
+  --green: #00b081;
 }
 
 @media screen and (max-width: 1024px) {

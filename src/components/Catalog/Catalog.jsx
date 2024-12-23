@@ -58,7 +58,7 @@ const CatalogBackground = styled.div`
 `
 
 const ColorBackground = styled.div`
-  background-color: ${(props) => props.theme.mediumGray};
+  background-color: var(--mediumGray);
   width: 100%;
 
   display: flex;

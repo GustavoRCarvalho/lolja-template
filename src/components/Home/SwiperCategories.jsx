@@ -42,7 +42,7 @@ export const SwiperCategories = ({
 }
 
 const CategoryButton = styled.button`
-  background-color: ${(props) => props.theme.mediumGray};
+  background-color: var(--mediumGray);
   border-radius: 0.2rem;
   font-size: 0.8em;
   font-weight: 700;

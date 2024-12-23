@@ -63,7 +63,7 @@ const MenuItem = styled.li`
   border-bottom: 1px solid transparent;
 
   :hover {
-    color: #fc6133;
+    color: var(--orange);
     transition: color 250ms;
 
     text-decoration-line: underline;

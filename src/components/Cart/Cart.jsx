@@ -84,7 +84,7 @@ const Modal = styled.div`
 
   color: #141414;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthMobile}) {
+  @media screen and (max-width: 768px) {
     width: 100%;
   }
 `

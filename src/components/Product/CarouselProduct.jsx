@@ -6,7 +6,7 @@ const CarouselContainer = styled(Carousel)`
   padding: 0;
   width: 50%;
 
-  @media screen and (max-width: ${(props) => props.theme.maxWidthTablet}) {
+  @media screen and (max-width: 1024px) {
     width: 100%;
     max-width: 40rem;
 
