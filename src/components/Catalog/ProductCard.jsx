@@ -38,16 +38,12 @@ export const ProductCard = ({ product }) => {
 
 const Card = styled.div`
   position: relative;
-  max-height: 500px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
   text-align: center;
-
-  border-radius: 10px;
-  overflow: hidden;
 
   @media screen and (max-width: 1024px) {
     max-height: 400px;
@@ -72,6 +68,11 @@ const ProductTitle = styled.h2`
 
   margin: 0;
   padding: 0;
+
+  height: 1.3em;
+  line-height: 1.3em;
+
+  overflow: hidden;
 `
 
 const PriceSale = styled.span`
