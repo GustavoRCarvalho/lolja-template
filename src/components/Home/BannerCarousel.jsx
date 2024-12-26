@@ -1,9 +1,9 @@
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import styled from "styled-components"
-import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner4.webp"
-import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner5.webp"
-import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner6.webp"
+import Banner1 from "../../assets/images/FakeAPIImages/Banner/Banner4.png"
+import Banner2 from "../../assets/images/FakeAPIImages/Banner/Banner5.png"
+import Banner3 from "../../assets/images/FakeAPIImages/Banner/Banner6.png"
 
 export const BannnerCarousel = () => {
   const CarouselImages = [Banner3, Banner1, Banner2]
