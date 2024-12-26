@@ -4,25 +4,27 @@ import { Pagination } from "./Pagination"
 import { useEffect } from "react"
 import { ColorRing } from "react-loader-spinner"
 import { useState } from "react"
-import { createList } from "../../assets/images/FakeAPIImages/Catalog"
 import { useSelector } from "react-redux"
 import { FilterMobileButton } from "./FilterMobileButton"
+import { productsCall } from "../../api/api"
 
 export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
   const { filters } = useSelector((state) => state.filter)
   const [loading, setLoading] = useState(false)
-  const [catalog, setCatalog] = useState([])
+  const [catalog, setCatalog] = useState(null)
   const [actualPage, setActualPage] = useState(1)
 
   useEffect(() => {
     setLoading(true)
-    const interval = setTimeout(() => {
-      setCatalog(createList(18))
+    const interval = setTimeout(async () => {
+      const response = await productsCall()
+      setCatalog(response)
       setLoading(false)
     }, 250)
 
     return () => {
       clearInterval(interval)
+      setLoading(false)
     }
   }, [pathLabel, actualPage, filters])
 
@@ -43,9 +45,10 @@ export const CatalogProducts = ({ pathLabel, totalPages = 0 }) => {
         />
       </Loading>
       <ProductsWrapper>
-        {catalog.map((product, index) => (
-          <ProductCard key={product.title + index} product={product} />
-        ))}
+        {catalog &&
+          catalog.map((product, index) => (
+            <ProductCard key={product.title + index} product={product} />
+          ))}
       </ProductsWrapper>
       {!!totalPages && (
         <Pagination

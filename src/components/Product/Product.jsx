@@ -3,38 +3,39 @@ import { Location } from "../common/Location"
 import { ContentContainer } from "../common/ContentLimit"
 import { useLocation } from "react-router-dom"
 import { ColorRing } from "react-loader-spinner"
-import { product } from "../../assets/images/FakeAPIImages/Product"
 import CarouselProduct from "./CarouselProduct"
 import { Price } from "./Price"
 import { BuyForm } from "./BuyForm"
 import { AboutProduct } from "./AboutProduct"
-
 import moletomSizes from "../../assets/images/FakeAPIImages/Product/moletomSizes.png"
 import { SwiperProductPage } from "./SwiperProductPage"
-import { createList } from "../../assets/images/FakeAPIImages/Catalog"
 import { useEffect, useState } from "react"
+import { productCall, productsCall } from "../../api/api"
 
 export const Product = () => {
   const { pathname } = useLocation()
-  const [loading, setLoading] = useState(true)
-  const [productData, setProductData] = useState({})
+  const [productData, setProductData] = useState(null)
+  const [swiperData, setSwiperData] = useState(null)
   const pathArray = pathname.replace("/", "").split("/")
   const pathLabel = decodeURI(pathArray[0])
   const title = decodeURI(pathArray[1])
 
   useEffect(() => {
-    setProductData({})
-    setLoading(true)
-    setTimeout(() => {
+    setProductData(null)
+    setSwiperData(null)
+    setTimeout(async () => {
       window.scroll(0, 0)
-      setProductData(product({ title: title }))
-      setLoading(false)
+      const responseProd = await productCall(title)
+      setProductData(responseProd)
+
+      const responseSwiper = await productsCall(10)
+      setSwiperData(responseSwiper)
     }, 250)
   }, [title])
 
   return (
     <>
-      {loading ? (
+      {!productData ? (
         <Loading>
           <ColorRing
             height="60"
@@ -53,8 +54,8 @@ export const Product = () => {
             <InfoWrapper>
               <Location pathLabel={pathLabel} />
               <TitleProduct>{productData.title}</TitleProduct>
-              <Price product={productData} />
-              <BuyForm product={productData} />
+              <Price {...productData} />
+              <BuyForm {...productData} />
             </InfoWrapper>
           </ProductContainer>
           <AboutProduct about={productData.about} />
@@ -63,7 +64,7 @@ export const Product = () => {
           </ImageSizesContainer>
         </>
       )}
-      <SwiperProductPage content={createList(10)} />
+      {swiperData && <SwiperProductPage key={title} content={swiperData} />}
     </>
   )
 }

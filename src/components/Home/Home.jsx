@@ -3,14 +3,23 @@ import { ContentContainer } from "../common/ContentLimit"
 import { BannnerCarousel } from "./BannerCarousel"
 import { InfoHomeLine } from "./InfoHomeLine"
 import { listCreators } from "../../assets/images/FakeAPIImages/Creators"
-import { listProducts } from "../../assets/images/FakeAPIImages/Catalog"
 import { SwiperProducts } from "./SwiperProducts"
 import { SwiperCreators } from "./SwiperCreators"
 import { SwiperWrapper } from "./SwiperWrapper"
 import { Poster } from "./Poster"
 import poster from "../../assets/images/FakeAPIImages/Posters/DESTAQUEBLUSAO.png"
+import { useEffect, useState } from "react"
+import { creatorListCall } from "../../api/api"
 
 export const Home = () => {
+  const [swiperData, setSwiperData] = useState(null)
+
+  useEffect(() => {
+    setTimeout(async () => {
+      setSwiperData(await creatorListCall())
+    }, 100)
+  }, [])
+
   return (
     <HomeContainer>
       <BannnerCarousel />
@@ -22,24 +31,28 @@ export const Home = () => {
       />
       <PosterProductsContainer>
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
-        <SwiperProducts content={listProducts["old skull"]} />
+        {swiperData && <SwiperProducts content={swiperData["old skull"]} />}
       </PosterProductsContainer>
-      <SwiperWrapper
-        list={listProducts}
-        title={"Lançamentos"}
-        Swiper={SwiperProducts}
-      />
+      {swiperData && (
+        <SwiperWrapper
+          list={swiperData}
+          title={"Lançamentos"}
+          Swiper={SwiperProducts}
+        />
+      )}
       <PosterContainer>
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
         <Poster srcPoster={poster} title={"Blusão Cinza"} />
       </PosterContainer>
-      <SwiperWrapper
-        list={listProducts}
-        title={"Mais vendidos"}
-        Swiper={SwiperProducts}
-      />
+      {swiperData && (
+        <SwiperWrapper
+          list={swiperData}
+          title={"Mais vendidos"}
+          Swiper={SwiperProducts}
+        />
+      )}
     </HomeContainer>
   )
 }

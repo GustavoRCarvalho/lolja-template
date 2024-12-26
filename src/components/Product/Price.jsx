@@ -1,24 +1,24 @@
 import styled from "styled-components"
 import { moneyFormat } from "../common/MoneyFormat"
 
-export const Price = ({ product }) => {
+export const Price = ({ price, salePrice, salePorcent, installmentsPrice }) => {
   return (
     <PriceContainer>
       <PriceWrapper>
         <PriceOriginal>DE:</PriceOriginal>
         <PriceOriginal textDecoration={"line-through"}>
-          {moneyFormat(product.price)}
+          {moneyFormat(price)}
         </PriceOriginal>
         <PriceSaleLabel>POR:</PriceSaleLabel>
-        <PriceSale>{moneyFormat(product.salePrice)}</PriceSale>
-        {product.installmentsPrice && (
+        <PriceSale>{moneyFormat(salePrice)}</PriceSale>
+        {installmentsPrice && (
           <PriceInstallment>
-            {product.installmentsPrice[0]}x de{" "}
-            {moneyFormat(product.installmentsPrice[1])} sem juros
+            {installmentsPrice[0]}x de {moneyFormat(installmentsPrice[1])} sem
+            juros
           </PriceInstallment>
         )}
       </PriceWrapper>
-      <SalePorcent>{product.salePorcent}</SalePorcent>
+      <SalePorcent>{salePorcent}</SalePorcent>
     </PriceContainer>
   )
 }

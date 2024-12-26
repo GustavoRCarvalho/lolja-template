@@ -3,8 +3,8 @@ import styled from "styled-components"
 export const ProductImage = ({ images }) => {
   return (
     <CardImage>
-      <Image src={images[1]} />
       <Image src={images[0]} topImage />
+      <Image src={images[1]} />
     </CardImage>
   )
 }

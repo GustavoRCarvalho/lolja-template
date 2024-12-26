@@ -1,0 +1,165 @@
+{
+  "1": {
+    "id": "1",
+    "images": [
+      "/images/MOLETOMOVERSIZEDOFF1.png",
+      "/images/MOLETOMOVERSIZEDOFF2.png",
+      "/images/MOLETOMOVERSIZEDOFF3.png"
+    ],
+    "title": "MOLETOM - OVERSIZED OFF",
+    "price": 239.9,
+    "salePrice": 199.9,
+    "salePorcent": "-17%",
+    "installmentsPrice": ["6", 33.32],
+    "options": {
+      "cores": ["preto", "branco"],
+      "tamanho": ["5 - 7 ANOS", "PP", "P", "M", "G", "2G", "3G", "4G"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "2": {
+    "id": "2",
+    "images": [
+      "/images/MOLETOMPOLVO1.png",
+      "/images/MOLETOMPOLVO2.png",
+      "/images/MOLETOMPOLVO3.png",
+      "/images/MOLETOMPOLVO4.png",
+      "/images/MOLETOMPOLVO5.png",
+      "/images/MOLETOMPOLVO6.png"
+    ],
+    "title": "MOLETOM - POLVO",
+    "price": 199.9,
+    "salePrice": 159.9,
+    "salePorcent": "-20%",
+    "installmentsPrice": ["6", 26.65],
+    "options": {
+      "cores": ["preto", "azul", "marrom"],
+      "tamanho": ["M", "G", "2G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "3": {
+    "id": "3",
+    "images": [
+      "/images/MANGALONGACARINAEYES1.png",
+      "/images/MANGALONGACARINAEYES2.png",
+      "/images/MANGALONGACARINAEYES3.png",
+      "/images/MANGALONGACARINAEYES4.png",
+      "/images/MANGALONGACARINAEYES5.png",
+      "/images/MANGALONGACARINAEYES6.png"
+    ],
+    "title": "MANGA LONGA - CARINAEYES",
+    "price": 129.9,
+    "salePrice": 99.9,
+    "salePorcent": "-23%",
+    "installmentsPrice": ["6", 16.65],
+    "options": {
+      "cores": ["verde", "amarelo", "preto"],
+      "tamanho": ["5 - 7 ANOS", "PP", "P", "M", "G"],
+      "sexo": ["FEMININO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "4": {
+    "id": "4",
+    "images": [
+      "/images/MOLETOMPESADELO1.png",
+      "/images/MOLETOMPESADELO2.png",
+      "/images/MOLETOMPESADELO3.png",
+      "/images/MOLETOMPESADELO4.png",
+      "/images/MOLETOMPESADELO5.png",
+      "/images/MOLETOMPESADELO6.png"
+    ],
+    "title": "MOLETOM - PESADELO",
+    "price": 239.9,
+    "salePrice": 179.9,
+    "salePorcent": "-25%",
+    "installmentsPrice": ["6", 33.32],
+    "options": {
+      "cores": ["preto", "cinza", "branco"],
+      "tamanho": ["5 - 7 ANOS", "PP", "P", "M", "G", "2G", "3G", "4G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "5": {
+    "id": "5",
+    "images": [
+      "/images/MOLETOMPRETOORIENTALDEATH1.png",
+      "/images/MOLETOMPRETOORIENTALDEATH2.png",
+      "/images/MOLETOMPRETOORIENTALDEATH3.png",
+      "/images/MOLETOMPRETOORIENTALDEATH4.png"
+    ],
+    "title": "MOLETOM PRETO - ORIENTAL DEATH",
+    "price": 199.9,
+    "salePrice": 159.9,
+    "salePorcent": "-20%",
+    "installmentsPrice": ["6", 33.32],
+    "options": {
+      "tamanhos": ["PP", "P", "M", "G", "2G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "6": {
+    "id": "6",
+    "images": [
+      "/images/CAMISETAOVERSIZEDPRETAODIN1.png",
+      "/images/CAMISETAOVERSIZEDPRETAODIN2.png",
+      "/images/CAMISETAOVERSIZEDPRETAODIN3.png",
+      "/images/CAMISETAOVERSIZEDPRETAODIN4.png",
+      "/images/CAMISETAOVERSIZEDPRETAODIN5.png"
+    ],
+    "title": "CAMISETA OVERSIZED PRETA - ODIN",
+    "price": 189.9,
+    "salePrice": 119.9,
+    "salePorcent": "-37%",
+    "installmentsPrice": ["6", 19.98],
+    "options": {
+      "tamanhos": ["M", "G", "2G", "4G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "7": {
+    "id": "7",
+    "images": [
+      "/images/MOLETOMPRETOGATITO1.png",
+      "/images/MOLETOMPRETOGATITO2.png",
+      "/images/MOLETOMPRETOGATITO3.png",
+      "/images/MOLETOMPRETOGATITO4.png",
+      "/images/MOLETOMPRETOGATITO5.png"
+    ],
+    "title": "MOLETOM PRETO - GATITO",
+    "price": 199.9,
+    "salePrice": 159.9,
+    "salePorcent": "-20%",
+    "installmentsPrice": ["6", 26.65],
+    "options": {
+      "tamanhos": ["M", "G", "2G", "4G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  },
+  "8": {
+    "id": "8",
+    "images": [
+      "/images/MOLETOMBASICOFULLPRINTHELLOKITTYROCKER1.png",
+      "/images/MOLETOMBASICOFULLPRINTHELLOKITTYROCKER2.png",
+      "/images/MOLETOMBASICOFULLPRINTHELLOKITTYROCKER3.png",
+      "/images/MOLETOMBASICOFULLPRINTHELLOKITTYROCKER4.png",
+      "/images/MOLETOMBASICOFULLPRINTHELLOKITTYROCKER5.png"
+    ],
+    "title": "MOLETOM BÁSICO FULL PRINT - HELLO KITTY ROCKER",
+    "price": 249.9,
+    "salePrice": 219.9,
+    "salePorcent": "-12%",
+    "installmentsPrice": ["6", 36.65],
+    "options": {
+      "tamanhos": ["M", "G", "2G", "4G"],
+      "sexo": ["FEMININO", "MASCULINO"]
+    },
+    "about": "Você está prestes a adquirir um produto totalmente único e de qualidade. Nosso moletom é flanelado por dentro, por isso é muito mais quentinho e fofo, é uma peça de extrema qualidade, proporcionando conforto e estilo para te aquecer nesse inverno. Os moletons são unissex, possuem capuz e bolsos laterais... assim todos podem ficar quentinhos e formidáveis! Nossas estampas (formidáveis, é claro) são criadas e pensadas especialmente pra você, o processo de produção silkscreen é feito à base d'água (o que faz com que sua estampa nunca corra o risco de craquelar). O prazo de envio é de 15 (quinze) a 20 (vinte) dias úteis, não incluso o prazo dos correios ou transportadora. Esse prazo é referente à confecção e embalagem dos produtos. Arte: Davi Severiano"
+  }
+}

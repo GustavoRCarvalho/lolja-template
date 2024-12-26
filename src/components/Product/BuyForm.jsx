@@ -7,7 +7,7 @@ import { addProductToCart } from "../../store/cartSlice"
 import { switchCartModal } from "../../store/modalSlice"
 import { useRef } from "react"
 
-export const BuyForm = ({ product }) => {
+export const BuyForm = ({ title, price, salePrice, images, options }) => {
   const dispatch = useDispatch()
   const refOptionsContainer = useRef(null)
   const [productOptions, setProductOptions] = useState({ quantity: 1 })
@@ -18,10 +18,10 @@ export const BuyForm = ({ product }) => {
     if (buttonActive()) {
       dispatch(
         addProductToCart({
-          title: product.title,
-          price: product.price,
-          salePrice: product.salePrice,
-          image: product.images[0],
+          title: title,
+          price: price,
+          salePrice: salePrice,
+          image: images[0],
           quantity: productOptions.quantity,
           color: productOptions.cores,
           size: productOptions.tamanho,
@@ -43,11 +43,8 @@ export const BuyForm = ({ product }) => {
   }
 
   const buttonActive = () => {
-    let options = Object.keys(product.options ?? {})
-    options.push("quantity")
-
-    const selectList = JSON.stringify(Object.keys(productOptions).sort())
-    const expectList = JSON.stringify(options.sort())
+    const selectList = Object.keys(productOptions).length
+    const expectList = Object.keys(options).length + 1 // adiciona 1 pois quantity não esta incluso nas options iniciais
 
     if (selectList === expectList) {
       return true
@@ -58,7 +55,7 @@ export const BuyForm = ({ product }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Options
-        options={product.options}
+        options={options}
         refOptionsContainer={refOptionsContainer}
         optionsNotSelected={optionsNotSelected}
         setOptionsNotSelected={setOptionsNotSelected}
