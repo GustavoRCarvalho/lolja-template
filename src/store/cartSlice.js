@@ -20,14 +20,15 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setInitialCart: (state, { payload }) => {
-      state.listCart = payload
+      return {
+        listCart: payload,
+      }
     },
     addProductToCart: (state, { payload }) => {
       const index = FindIndex(state, payload)
 
       if (index > -1) {
         const savedProduct = state.listCart[index]
-
         state.listCart[index] = {
           ...savedProduct,
           quantity: savedProduct.quantity + payload.quantity,
