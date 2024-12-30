@@ -117,7 +117,7 @@ const AddCardButton = styled.button`
   }
 `
 
-const QuantityWrapper = styled.div`
+export const QuantityWrapper = styled.div`
   border: 1px solid #ccc;
   border-radius: 2px;
 
@@ -127,7 +127,7 @@ const QuantityWrapper = styled.div`
   margin-right: 2rem;
 `
 
-const QuantityInput = styled.input`
+export const QuantityInput = styled.input`
   background-color: #0000;
 
   font-size: 0.8em;
@@ -139,7 +139,7 @@ const QuantityInput = styled.input`
   text-align: center;
 `
 
-const QuantityButton = styled.button`
+export const QuantityButton = styled.button`
   background-color: #0000;
 
   display: grid;

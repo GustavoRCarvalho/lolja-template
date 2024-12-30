@@ -7,7 +7,15 @@ import { addProductToCart } from "../../store/cartSlice"
 import { switchCartModal } from "../../store/modalSlice"
 import { useRef } from "react"
 
-export const BuyForm = ({ title, price, salePrice, images, options }) => {
+export const BuyForm = ({
+  id,
+  title,
+  price,
+  salePrice,
+  installmentsPrice,
+  images,
+  options,
+}) => {
   const dispatch = useDispatch()
   const refOptionsContainer = useRef(null)
   const [productOptions, setProductOptions] = useState({ quantity: 1 })
@@ -18,13 +26,15 @@ export const BuyForm = ({ title, price, salePrice, images, options }) => {
     if (buttonActive()) {
       dispatch(
         addProductToCart({
+          id: id,
           title: title,
           price: price,
           salePrice: salePrice,
+          installmentsPrice: installmentsPrice[1],
           image: images[0],
           quantity: productOptions.quantity,
           color: productOptions.cores,
-          size: productOptions.tamanho,
+          size: productOptions.tamanhos,
           gender: productOptions.sexo ?? "unissex",
         })
       )

@@ -7,45 +7,37 @@ import { CartFinal } from "./CartFinal"
 import { useCookies } from "react-cookie"
 import { useEffect } from "react"
 import { setInitialCart } from "../../store/cartSlice"
-import { useMemo } from "react"
 
 export const Cart = () => {
   const [cookies, setCookies] = useCookies("cart")
   const dispatch = useDispatch()
   const { listCart } = useSelector((state) => state.cart)
-  const cartData = useMemo(() => {
-    if (JSON.stringify(listCart) === "[]") {
-      return cookies.cart ?? []
-    } else {
-      return listCart
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cookies.cart])
 
-  function quantityCartItems(list) {
+  useEffect(() => {
+    if (listCart.length) return
+    if (cookies.cart == undefined) {
+      setCookies("cart", [], { path: "/" })
+      return
+    }
+    dispatch(setInitialCart(cookies.cart))
+  }, [])
+
+  useEffect(() => {
+    setCookies("cart", listCart, { path: "/" })
+  }, [listCart, setCookies])
+
+  const quantityCartItems = (list) => {
+    if (list.length === 1 && list[0].quantity === 1) {
+      return `1 item`
+    }
+
     let totalQuantity = 0
+
     list.forEach(({ quantity }) => {
       totalQuantity += quantity
     })
-
-    if (totalQuantity === 1) {
-      return `${totalQuantity} item`
-    } else {
-      return `${totalQuantity} itens`
-    }
+    return `${totalQuantity} itens`
   }
-
-  useEffect(() => {
-    if (cookies.cart !== undefined) {
-      dispatch(setInitialCart(cartData))
-    } else {
-      setCookies("cart", [])
-    }
-  }, [cookies.cart, dispatch, cartData, setCookies])
-
-  useEffect(() => {
-    setCookies("cart", listCart)
-  }, [listCart, setCookies])
 
   return (
     <Modal>

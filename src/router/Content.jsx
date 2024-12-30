@@ -4,6 +4,7 @@ import { Home } from "../components/Home/Home"
 import { Product } from "../components/Product/Product"
 import styled from "styled-components"
 import { Accounts } from "../components/account/Accouts"
+import { Checkout } from "../components/Checkout/Checkout"
 
 export default function Content(props) {
   return (
@@ -11,6 +12,7 @@ export default function Content(props) {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/accounts" element={<Accounts />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
         <Route path=":catalog" element={<Catalog />} />
         <Route path=":catalog/:product" element={<Product />} />
         {/* <Route path="about" element={<About />} />
