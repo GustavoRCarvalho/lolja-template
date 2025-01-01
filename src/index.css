@@ -2,9 +2,7 @@ body {
   --bg-white: rgb(255, 255, 255);
 
   margin: 0;
-  font-family: "Dosis";
   font-size: 1rem;
-  letter-spacing: 0.04em;
 
   --mediumGray: #f2f2f2;
   --orange: #fc6133;
@@ -23,6 +21,7 @@ body {
 
 * {
   font-family: "Dosis";
+  letter-spacing: 0.04em;
 }
 
 @font-face {
