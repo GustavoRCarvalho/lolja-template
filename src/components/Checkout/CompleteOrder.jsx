@@ -16,7 +16,7 @@ const Container = styled.div`
   align-items: center;
 `
 
-const CompleteButton = styled.button`
+export const CompleteButton = styled.button`
   background-color: var(--orange);
   color: #fff;
 

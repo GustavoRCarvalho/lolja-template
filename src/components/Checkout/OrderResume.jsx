@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { moneyFormat } from "../common/MoneyFormat"
+import { Cupom } from "./Cupom"
+import { Ship } from "./Ship"
 
 const initialTotal = {
   sub: 0,
@@ -18,7 +20,7 @@ export const OrderResume = ({ products }) => {
       products.forEach((product) => {
         sub += product.salePrice * product.quantity
         installmentsPrice += product.installmentsPrice * product.quantity
-        final += product.salePrice * product.quantity //mult. by desc
+        final += product.salePrice * product.quantity
       })
       return { sub: sub, installmentsPrice: installmentsPrice, final: final }
     })
@@ -33,14 +35,8 @@ export const OrderResume = ({ products }) => {
         <span>Subtotal do pedido</span>
         <span>{moneyFormat(totals?.sub)}</span>
       </SpacedLine>
-      <SpacedLine>
-        <span>Entrega</span>
-        <UnderlineSpan>Calcular</UnderlineSpan>
-      </SpacedLine>
-      <SpacedLine>
-        <span>Cupom de desconto</span>
-        <UnderlineSpan>Adicionar</UnderlineSpan>
-      </SpacedLine>
+      <Ship />
+      <Cupom setTotal={setTotals} />
       <TotalLine>
         <span>Total:</span>
         <div>
@@ -54,6 +50,27 @@ export const OrderResume = ({ products }) => {
     </ResumeWrapper>
   )
 }
+
+export const ResumeInput = styled.input`
+  padding: 0.5em;
+
+  outline: none;
+  border: 1px solid;
+  border-color: ${(props) => (props.$error ? "red" : "#d8d8d8")};
+  color: ${(props) => (props.$error ? "red" : "unset")};
+  &::placeholder {
+    color: ${(props) => (props.$error ? "red" : "unset")};
+  }
+
+  &:focus {
+    border-color: var(--orange);
+  }
+`
+
+export const LineWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
 
 const TotalLine = styled.div`
   display: flex;
@@ -105,8 +122,13 @@ const SpacedLine = styled.div`
   border-bottom: 1px solid #e4e4e4;
 `
 
-const UnderlineSpan = styled.span`
-  text-decoration: underline;
+export const SpacedLineVert = styled(SpacedLine)`
+  flex-direction: column;
+  gap: 1em;
+`
+
+export const ClicableSpan = styled.span`
+  text-decoration: ${(props) => props.$textDecoration ?? "unset"};
 
   cursor: pointer;
 
