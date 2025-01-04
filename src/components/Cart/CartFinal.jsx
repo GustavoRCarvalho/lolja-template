@@ -3,8 +3,11 @@ import { moneyFormat } from "../common/MoneyFormat"
 import { useDispatch } from "react-redux"
 import { switchCartModal } from "../../store/modalSlice"
 import { NoStyleLinkRouter } from "../common/NoStyleLinkRouter"
+import { useNavigate } from "react-router-dom"
 
 export const CartFinal = ({ list }) => {
+  const navigate = useNavigate()
+
   const dispatch = useDispatch()
   function totalPrice(list) {
     let total = 0
@@ -23,6 +26,8 @@ export const CartFinal = ({ list }) => {
 
   function handleSubmit(event) {
     event.preventDefault()
+    dispatch(switchCartModal())
+    navigate("/checkout")
   }
   return (
     <>
@@ -32,9 +37,6 @@ export const CartFinal = ({ list }) => {
           <LabelTotal>{totalPrice(list)}</LabelTotal>{" "}
           <LabelInstallment>ou 6x de {totalInstallment(list)}</LabelInstallment>
         </PriceTotal>
-      </FinalLine>
-      <FinalLine>
-        <LabelTotal>Frete</LabelTotal> <LabelContinue>Calcular</LabelContinue>
       </FinalLine>
       <FinalLink>
         <FinalButton onClick={handleSubmit}>
