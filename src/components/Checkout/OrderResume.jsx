@@ -6,6 +6,8 @@ import { Ship } from "./Ship"
 
 const initialTotal = {
   sub: 0,
+  ship: 0,
+  desc: 0,
   installmentsPrice: 0,
   final: 0,
 }
@@ -14,15 +16,20 @@ export const OrderResume = ({ products }) => {
   const [totals, setTotals] = useState(initialTotal)
 
   useEffect(() => {
-    let { sub, installmentsPrice, final } = initialTotal
+    let { sub, final } = initialTotal
 
-    setTotals(() => {
+    setTotals((state) => {
       products.forEach((product) => {
         sub += product.salePrice * product.quantity
-        installmentsPrice += product.installmentsPrice * product.quantity
-        final += product.salePrice * product.quantity
       })
-      return { sub: sub, installmentsPrice: installmentsPrice, final: final }
+      final = sub * state.desc
+      final = sub + state.ship - final
+      return {
+        ...state,
+        sub: sub,
+        installmentsPrice: final / 6,
+        final: final,
+      }
     })
   }, [products])
 
@@ -31,12 +38,24 @@ export const OrderResume = ({ products }) => {
       <TitleText>Resumo do pedido</TitleText>
       <span>Seu pedido vai gerar cashback!</span>
       <CashbackLine />
-      <SpacedLine>
+      <Ship setTotals={setTotals} />
+      <Cupom setTotals={setTotals} />
+      <TotalLine>
         <span>Subtotal do pedido</span>
         <span>{moneyFormat(totals?.sub)}</span>
-      </SpacedLine>
-      <Ship />
-      <Cupom setTotal={setTotals} />
+      </TotalLine>
+      {totals.desc !== 0 && (
+        <TotalLine>
+          <span>Valor do Desconto:</span>
+          <span>- {moneyFormat(totals.desc * totals.sub)}</span>
+        </TotalLine>
+      )}
+      {totals.ship !== 0 && (
+        <TotalLine>
+          <span>Valor da Entrega:</span>
+          <span>+ {moneyFormat(totals.ship)}</span>
+        </TotalLine>
+      )}
       <TotalLine>
         <span>Total:</span>
         <div>
@@ -76,7 +95,7 @@ const TotalLine = styled.div`
   display: flex;
   justify-content: space-between;
 
-  padding-block: 2em;
+  padding-top: 1em;
 
   span {
     display: block;

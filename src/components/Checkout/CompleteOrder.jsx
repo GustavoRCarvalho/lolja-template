@@ -41,6 +41,11 @@ export const CompleteButton = styled.button`
     background-color: var(--green);
   }
 
+  &:disabled {
+    background-color: #ddd;
+    cursor: default;
+  }
+
   transition: background-color 100ms;
 `
 

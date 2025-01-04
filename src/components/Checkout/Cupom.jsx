@@ -17,9 +17,18 @@ export const Cupom = ({ setTotals }) => {
   }
 
   async function handleCupom() {
-    const data = await checkCupom(cupomInput)
-    if (data && data.desc < 1) {
-      setTotals((state) => ({ ...state, final: state.final * data.desc }))
+    const data = await checkCupom(cupomInput.value)
+    if (data) {
+      setTotals((state) => {
+        const final = state.sub - state.sub * data.desc + state.ship
+
+        return {
+          ...state,
+          desc: data.desc,
+          final: final,
+          installmentsPrice: final / 6,
+        }
+      })
       return
     }
     setCupomInput((state) => ({ ...state, error: true }))
@@ -45,7 +54,11 @@ export const Cupom = ({ setTotals }) => {
             placeholder="Ex.: Cupom123"
             type="text"
           />
-          <CompleteButton type="button" onClick={handleCupom}>
+          <CompleteButton
+            disabled={cupomInput.value.length === 0}
+            type="button"
+            onClick={handleCupom}
+          >
             Aplicar
           </CompleteButton>
         </LineWrapper>

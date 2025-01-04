@@ -29,13 +29,21 @@ export const Ship = ({ setTotals }) => {
     setShipInput({ value: newString, error: false })
   }
 
-  async function handleShip() {
-    const data = await checkShip(shipInput)
-    if (data && data.price < 1) {
-      setTotals((state) => ({ ...state, final: state.final + data.price }))
+  const handleShip = async () => {
+    const data = await checkShip(shipInput.value)
+    if (data) {
+      setTotals((state) => {
+        const final = state.final + data.price
+        return {
+          ...state,
+          ship: data.price,
+          final: final,
+          installmentsPrice: final / 6,
+        }
+      })
       return
     }
-    setShipInput((state) => ({ ...state, error: true }))
+    setShipInput({ value: 0, error: true })
   }
 
   return (
@@ -59,7 +67,11 @@ export const Ship = ({ setTotals }) => {
             maxLength={9}
             type="text"
           />
-          <CompleteButton type="button" onClick={handleShip}>
+          <CompleteButton
+            disabled={shipInput.value.length !== 9}
+            type="button"
+            onClick={handleShip}
+          >
             Calcular
           </CompleteButton>
         </LineWrapper>
