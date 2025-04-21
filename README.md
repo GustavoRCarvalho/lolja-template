@@ -49,10 +49,26 @@ Bem-vindo ao projeto Réplica Lolja, uma réplica da loja de roupas geek "Lolja.
 
 ## Como Iniciar o Projeto
 
-1. Clone este repositório: `git clone https://github.com/GustavoRCarvalho/lolja-template`
-2. Instale as dependências: `npm install ou pnpm install`
-3. Inicie o servidor de desenvolvimento: `npm run dev`
-4. Acesse o aplicativo em seu navegador: `http://localhost:5173`
+1. Clone este repositório:
+```sh
+git clone https://github.com/GustavoRCarvalho/lolja-template
+```
+2. Instale as dependências:
+```sh
+npm install
+```
+OU
+```sh
+pnpm install
+```
+3. Inicie o servidor de desenvolvimento:
+```sh
+npm run dev
+```
+4. Acesse o aplicativo em seu navegador:
+```sh
+http://localhost:5173
+```
 
 ## Contribuições
 
