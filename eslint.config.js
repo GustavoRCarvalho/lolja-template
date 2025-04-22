@@ -32,8 +32,11 @@ export default [
       "react/jsx-no-target-blank": "off",
       "react-refresh/only-export-components": [
         "warn",
-        { allowConstantExport: true },
-        { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
+        {
+          allowConstantExport: true,
+          varsIgnorePattern: "^_",
+          argsIgnorePattern: "^_",
+        },
       ],
     },
   },
