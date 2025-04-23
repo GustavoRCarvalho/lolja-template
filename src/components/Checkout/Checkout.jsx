@@ -4,29 +4,11 @@ import { ShareCheckout } from "./ShareCheckout"
 import { CompleteOrder } from "./CompleteOrder"
 import { ProductCheckout } from "./ProductCheckout"
 import { OrderResume } from "./OrderResume"
-import { useCookies } from "react-cookie"
 import { useSelector } from "react-redux"
-import { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { setInitialCart } from "../../store/cartSlice"
 
 export const Checkout = () => {
-  const dispatch = useDispatch()
-  const [cookies, setCookies] = useCookies("cart")
   const { listCart } = useSelector((state) => state.cart)
-
-  useEffect(() => {
-    if (listCart.length) return
-    if (cookies.cart == undefined) {
-      setCookies("cart", [], { path: "/" })
-      return
-    }
-    dispatch(setInitialCart(cookies.cart))
-  }, [])
-
-  useEffect(() => {
-    setCookies("cart", listCart, { path: "/" })
-  }, [listCart, setCookies])
+  const cartProducts = [...listCart.values()]
 
   return (
     <Container>
@@ -34,13 +16,13 @@ export const Checkout = () => {
         <Logo />
         <ShareCheckout />
         <ProductsWrapper>
-          <ProductCheckout products={listCart} />
+          <ProductCheckout products={cartProducts} />
         </ProductsWrapper>
         <CompleteOrder />
       </OrderWrapper>
       <PriceBackground>
         <PriceWrapper>
-          <OrderResume products={listCart} />
+          <OrderResume products={cartProducts} />
         </PriceWrapper>
       </PriceBackground>
     </Container>

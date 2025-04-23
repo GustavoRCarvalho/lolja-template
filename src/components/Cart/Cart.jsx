@@ -4,27 +4,11 @@ import { CartItem } from "./CartItem"
 import { CloseModalButton } from "../common/CloseModalButton"
 import { switchCartModal } from "../../store/modalSlice"
 import { CartFinal } from "./CartFinal"
-import { useCookies } from "react-cookie"
-import { useEffect } from "react"
-import { setInitialCart } from "../../store/cartSlice"
 
 export const Cart = () => {
-  const [cookies, setCookies] = useCookies("cart")
   const dispatch = useDispatch()
   const { listCart } = useSelector((state) => state.cart)
-
-  useEffect(() => {
-    if (listCart.length) return
-    if (cookies.cart == undefined) {
-      setCookies("cart", [], { path: "/" })
-      return
-    }
-    dispatch(setInitialCart(cookies.cart))
-  }, [])
-
-  useEffect(() => {
-    setCookies("cart", listCart, { path: "/" })
-  }, [listCart, setCookies])
+  const cartProducts = [...listCart.values()]
 
   const quantityCartItems = (list) => {
     if (list.length === 1 && list[0].quantity === 1) {
@@ -44,22 +28,22 @@ export const Cart = () => {
       <TitleWrapper>
         <CartTitle>
           Carrinho de compras{" "}
-          <CartQuantity>({quantityCartItems(listCart)})</CartQuantity>
+          <CartQuantity>({quantityCartItems(cartProducts)})</CartQuantity>
         </CartTitle>
         <CloseModalButton onClick={() => dispatch(switchCartModal())} />
       </TitleWrapper>
       <CartContainer>
-        {listCart.length !== 0 ? (
-          listCart.map((product, index) => {
+        {cartProducts.length !== 0 ? (
+          cartProducts.map((product, index) => {
             return <CartItem key={product.title + index} product={product} />
           })
         ) : (
           <CartEmpty>Seu carrinho está vazio</CartEmpty>
         )}
       </CartContainer>
-      {listCart.length !== 0 && (
+      {cartProducts.length !== 0 && (
         <FinalWrapper>
-          <CartFinal list={listCart} />
+          <CartFinal list={cartProducts} />
         </FinalWrapper>
       )}
     </Modal>

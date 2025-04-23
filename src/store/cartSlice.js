@@ -1,18 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  listCart: [],
+  listCart: new Map([]),
 }
 
-function FindIndex(state, product) {
-  return state.listCart.findIndex(({ id, size, color, gender }) => {
-    return (
-      product.id === id &&
-      product.size === size &&
-      product.color === color &&
-      product.gender === gender
-    )
-  })
+function constructKey(product) {
+  return `${product.id}-${product.size}-${product.color}-${product.gender}`
 }
 
 const cartSlice = createSlice({
@@ -20,41 +13,49 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     setInitialCart: (state, { payload }) => {
-      return {
-        listCart: payload,
+      for (const product of payload) {
+        const key = constructKey(product)
+        state.listCart.set(key, product)
       }
     },
     addProductToCart: (state, { payload }) => {
-      const index = FindIndex(state, payload)
+      const key = constructKey(payload)
 
-      if (index > -1) {
-        const savedProduct = state.listCart[index]
-        state.listCart[index] = {
-          ...savedProduct,
-          quantity: savedProduct.quantity + payload.quantity,
-        }
-      } else {
-        state.listCart = [...state.listCart, payload]
+      const savedProduct = state.listCart.get(key) || payload
+      let quantity = payload.quantity
+
+      if (state.listCart.has(key)) {
+        quantity += savedProduct?.quantity
       }
+      state.listCart.set(key, {
+        ...savedProduct,
+        quantity: quantity,
+      })
     },
     removeProductFromCart: (state, { payload }) => {
-      const index = FindIndex(state, payload)
+      const key = constructKey(payload)
 
-      if (index > -1) {
-        state.listCart.splice(index, 1)
-      }
+      state.listCart.delete(key)
     },
     updateCartProductQuantity: (state, { payload }) => {
-      const newQuantity = payload.newNumber.toString().replace(/\D/g, "")
-      const index = FindIndex(state, payload.product)
+      const newQuantity = Number(
+        payload.newNumber.toString().replace(/\D/g, "")
+      )
 
+      const key = constructKey(payload.product)
+      const savedProduct = state.listCart.get(key)
+
+      let quantity = newQuantity
       if (newQuantity >= 99) {
-        state.listCart[index].quantity = 99
+        quantity = 99
       } else if (newQuantity < 1) {
-        state.listCart[index].quantity = 1
-      } else {
-        state.listCart[index].quantity = Number(newQuantity)
+        quantity = 1
       }
+
+      state.listCart.set(key, {
+        ...savedProduct,
+        quantity: quantity,
+      })
     },
   },
 })
