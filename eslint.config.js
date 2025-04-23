@@ -34,9 +34,11 @@ export default [
         "warn",
         {
           allowConstantExport: true,
-          varsIgnorePattern: "^_",
-          argsIgnorePattern: "^_",
         },
+      ],
+      "no-unused-vars": [
+        "warn",
+        { varsIgnorePattern: "^_", argsIgnorePattern: "^_" },
       ],
     },
   },
