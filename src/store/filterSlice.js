@@ -10,14 +10,9 @@ const filterSlice = createSlice({
   initialState,
   reducers: {
     setFilter: (state, { payload }) => {
-      const filtersKeys = Object.keys(state.filters)
-      if (filtersKeys.find((value) => value === payload)) {
-        state.filters = {
-          ...state.filters,
-          [payload]: !state.filters[payload],
-        }
-      } else {
-        state.filters = { ...state.filters, [payload]: true }
+      state.filters = {
+        ...state.filters,
+        [payload]: !state.filters[payload],
       }
     },
     setFilterRadio: (state, { payload }) => {
